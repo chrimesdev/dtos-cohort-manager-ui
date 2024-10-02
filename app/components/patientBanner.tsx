@@ -1,3 +1,4 @@
+import { formatNhsNumber } from "../lib/utils";
 import styles from "../styles/components/patientBanner.module.scss";
 
 interface PatientBannerProps {
@@ -19,7 +20,7 @@ const PatientBanner: React.FC<PatientBannerProps> = ({
       </dl>
       <dl>
         <dt>NHS number:</dt>
-        <dd>{nhsNumber}</dd>
+        <dd>{formatNhsNumber(nhsNumber)}</dd>
       </dl>
     </div>
   );

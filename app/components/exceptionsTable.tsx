@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { formatNhsNumber } from "../lib/utils";
 import { Exception } from "../@types";
 
 interface ExceptionsTableProps {
@@ -54,7 +55,7 @@ const ExceptionsTable: React.FC<ExceptionsTableProps> = ({ exceptions }) => {
                   NHS number{" "}
                 </span>
                 <Link href="/participant-information" legacyBehavior>
-                  <a>{exception.nhsNumber}</a>
+                  <a>{formatNhsNumber(exception.nhsNumber)}</a>
                 </Link>
               </td>
               <td role="cell" className="nhsuk-table__cell">
