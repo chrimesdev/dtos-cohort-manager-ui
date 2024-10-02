@@ -34,7 +34,7 @@ To be completed
 
 Unit tests are written using [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
 
-#### Running Unit tests
+#### Running unit tests
 
 To run unit tests, use the following command:
 
@@ -44,7 +44,7 @@ pnpm run test:unit
 
 This will execute all unit tests and provide a summary of the tests results.
 
-#### Running Unit tests in watch mode
+#### Running unit tests in watch mode
 
 To run the unit tests in watch mode, use the following command:
 
@@ -63,6 +63,32 @@ npm run test:unit:coverage
 ```
 
 This will generate a coverage report in the `coverage` directory.
+
+### End-to-end tests
+
+End-to-end tests are written using [Playwright](https://playwright.dev/).
+
+Before running end-to-end tests make sure your development server is running locally on `http://localhost:3000`. Using the command `pnpm run dev`.
+
+#### Running end-to-end tests
+
+To run the end-to-end tests, use the following command:
+
+```
+pnpm run test:e2e:ui
+```
+
+This will open the Playwright test runner, where you can run the tests interactively.
+
+### Running end-to-end tests in headless mode
+
+To run the end-to-end tests in headless mode, use the following command:
+
+```
+pnpm run test:e2e
+```
+
+This will run the tests in headless mode and output the results to the terminal.
 
 ## Licence
 
