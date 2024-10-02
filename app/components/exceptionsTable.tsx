@@ -110,7 +110,9 @@ const ExceptionsTable: React.FC<ExceptionsTableProps> = ({ exceptions }) => {
                 >
                   Status{" "}
                 </span>
-                <strong className="nhsuk-tag">{exception.status}</strong>
+                <strong className="nhsuk-tag nhsuk-tag--blue">
+                  {exception.status}
+                </strong>
               </td>
             </tr>
           ))}
