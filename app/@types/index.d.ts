@@ -1,4 +1,4 @@
-export type Exception = {
+export type ExceptionDetails = {
   exceptionId: number;
   nhsNumber: string;
   dateCreated: string;

@@ -1,13 +1,5 @@
-import { PatientDetails } from "../@types";
+import { PatientDetails, ExceptionDetails } from "../@types";
 import NHSUKJavaScript from "./_nhsukJavaScript";
-
-interface ExceptionDetails {
-  dateCreated: string;
-  service: string;
-  dateRaisedWithNBO: string;
-  status: string;
-  shortDescription: string;
-}
 
 interface ParticipantInformationTabsProps {
   patientDetails: PatientDetails;
@@ -106,7 +98,7 @@ const ParticipantInformationTabs: React.FC<ParticipantInformationTabsProps> = ({
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Date raised with NBO</dt>
               <dd className="nhsuk-summary-list__value">
-                {exceptionDetails.dateRaisedWithNBO}
+                {exceptionDetails.dateCreated}
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
@@ -118,7 +110,7 @@ const ParticipantInformationTabs: React.FC<ParticipantInformationTabsProps> = ({
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Short description</dt>
               <dd className="nhsuk-summary-list__value">
-                {exceptionDetails.shortDescription}
+                {exceptionDetails.description}
               </dd>
             </div>
           </dl>
