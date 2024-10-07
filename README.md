@@ -4,7 +4,24 @@ User interface for the Screening - Cohort Manager service (Service planning team
 
 Built with [Next.js](https://nextjs.org/).
 
-## Setup
+## Using Docker and Makefile
+
+Development environment
+
+```
+make build-development
+make start-development
+```
+
+Open [http://localhost:3001](http://localhost:3001).
+
+Stop the development environment
+
+```
+make stop-development
+```
+
+## Running locally
 
 Install the required dependencies using `pnpm install`
 
@@ -14,18 +31,18 @@ Then, run the development server:
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
 ### Prerequisites
 
 - [pnpm](https://pnpm.io/) package manager
 
-### Environment variables
+## Environment variables
 
 Create a `.env` file which should override environment variables required to run locally:
 
 ```
-To be completed
+NEXT_PUBLIC_API_URL=http://localhost
 ```
 
 ## Testing
