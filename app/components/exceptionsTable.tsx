@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { formatNhsNumber, removeSpacesFromNhsNumber } from "../lib/utils";
-import { Exception } from "../@types";
+import { ExceptionDetails } from "../types";
 
 interface ExceptionsTableProps {
-  exceptions: Exception[];
+  exceptions: ExceptionDetails[];
 }
 
 const ExceptionsTable: React.FC<ExceptionsTableProps> = ({ exceptions }) => {

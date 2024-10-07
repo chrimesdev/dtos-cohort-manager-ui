@@ -26,12 +26,14 @@ export default function Page({ params }: { params: { nhsNumber: string } }) {
   };
 
   const exceptionDetails = {
+    exceptionId: 123456,
+    nhsNumber: "723 333 6897",
     dateCreated: "10th August 2024",
-    service: "Breast screening",
-    dateRaisedWithNBO: "12th August 2024",
-    status: "Active",
-    shortDescription:
+    description:
       "Requesting help with Breast screening service. Not related to failure or outage. NHS number transfer not updating participant recall status.",
+    type: "Duplicate",
+    service: "Breast screening",
+    status: "Active",
   };
 
   return (

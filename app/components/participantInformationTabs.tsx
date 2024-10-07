@@ -1,4 +1,4 @@
-import { PatientDetails, ExceptionDetails } from "../@types";
+import { PatientDetails, ExceptionDetails } from "../types";
 import NHSUKJavaScript from "./_nhsukJavaScript";
 
 interface ParticipantInformationTabsProps {
