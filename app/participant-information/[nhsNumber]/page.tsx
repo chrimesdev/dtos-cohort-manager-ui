@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   title: "Participant information - Cohort Manager",
 };
 
-export default function Page({ params }: { params: { nhsNumber: string } }) {
-  const { nhsNumber } = params;
+export default function Page({ params }: { params: { exceptionId: string } }) {
+  const { exceptionId } = params;
 
   const patientDetails = {
     name: "Sandra Lewis",
@@ -24,7 +24,6 @@ export default function Page({ params }: { params: { nhsNumber: string } }) {
     gpPractice: "GP medical centre, Nottingham Forest, Nottingham, N21 45T",
     gpPracticeCode: "B86110",
   };
-
   const exceptionDetails = {
     exceptionId: 123456,
     nhsNumber: "723 333 6897",
@@ -35,7 +34,6 @@ export default function Page({ params }: { params: { nhsNumber: string } }) {
     service: "Breast screening",
     status: "Active",
   };
-
   return (
     <>
       <Header />
@@ -43,7 +41,10 @@ export default function Page({ params }: { params: { nhsNumber: string } }) {
         <BackLink href="/exceptions-summary" />
         <main className="nhsuk-main-wrapper" id="maincontent" role="main">
           <h1>Participant information</h1>
-          <PatientBanner participantName="Sandra Lewis" nhsNumber={nhsNumber} />
+          <PatientBanner
+            participantName="Sandra Lewis"
+            nhsNumber="723 333 6897"
+          />
           <ParticipantInformationTabs
             patientDetails={patientDetails}
             exceptionDetails={exceptionDetails}

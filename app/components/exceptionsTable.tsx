@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { formatNhsNumber, removeSpacesFromNhsNumber } from "../lib/utils";
 import { ExceptionDetails } from "../types";
 
 interface ExceptionsTableProps {
@@ -18,10 +17,10 @@ const ExceptionsTable: React.FC<ExceptionsTableProps> = ({ exceptions }) => {
         <thead role="rowgroup" className="nhsuk-table__head">
           <tr role="row">
             <th role="columnheader" scope="col">
-              NHS number
+              Exception ID
             </th>
             <th role="columnheader" scope="col">
-              Exception ID
+              NHS number
             </th>
             <th role="columnheader" scope="col">
               Date exceptions created
@@ -47,28 +46,26 @@ const ExceptionsTable: React.FC<ExceptionsTableProps> = ({ exceptions }) => {
               className="nhsuk-table__row"
               key={exception.exceptionId}
             >
-              <td role="cell" className="nhsuk-table__cell app-u-no-wrap">
-                <span
-                  className="nhsuk-table-responsive__heading"
-                  aria-hidden="true"
-                >
-                  NHS number{" "}
-                </span>
-                <Link
-                  href={`/participant-information/${removeSpacesFromNhsNumber(
-                    exception.nhsNumber
-                  )}`}
-                  legacyBehavior
-                >
-                  <a>{formatNhsNumber(exception.nhsNumber)}</a>
-                </Link>
-              </td>
               <td role="cell" className="nhsuk-table__cell">
                 <span
                   className="nhsuk-table-responsive__heading"
                   aria-hidden="true"
                 >
                   Exception ID{" "}
+                </span>
+                <Link
+                  href={`/participant-information/${exception.exceptionId}`}
+                  legacyBehavior
+                >
+                  <a>{exception.exceptionId}</a>
+                </Link>
+              </td>
+              <td role="cell" className="nhsuk-table__cell app-u-no-wrap">
+                <span
+                  className="nhsuk-table-responsive__heading"
+                  aria-hidden="true"
+                >
+                  NHS number{" "}
                 </span>
                 {exception.exceptionId}
               </td>
