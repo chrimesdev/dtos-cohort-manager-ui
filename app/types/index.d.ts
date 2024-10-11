@@ -12,9 +12,9 @@ export type PatientDetails = {
   name: string;
   dateOfBirth: string;
   nhsNumber: string;
-  contactInformation: string;
+  address: string;
   contactDetails: {
-    phone: string;
+    phoneNumber: string;
     email: string;
   };
   gpPractice: string;

@@ -10,20 +10,19 @@ export const metadata: Metadata = {
 };
 
 export default function Page({ params }: { params: { exceptionId: string } }) {
-  const { exceptionId } = params;
-
   const patientDetails = {
-    name: "Sandra Lewis",
-    dateOfBirth: "15 March 1984",
     nhsNumber: "723 333 6897",
-    contactInformation: "73 Roman Rd, Leeds, LS2 5ZN",
+    name: "John Doe",
+    dateOfBirth: "1980-01-01",
+    address: "123 Main St, Anytown, AT 12345",
     contactDetails: {
-      phone: "07700 900362",
-      email: "sandra.lewis@example.com",
+      phoneNumber: "01234 567890",
+      email: "john.doe@example.com",
     },
-    gpPractice: "GP medical centre, Nottingham Forest, Nottingham, N21 45T",
-    gpPracticeCode: "B86110",
+    gpPractice: "Anytown Medical Centre",
+    gpPracticeCode: "G12345",
   };
+
   const exceptionDetails = {
     exceptionId: 123456,
     nhsNumber: "723 333 6897",
