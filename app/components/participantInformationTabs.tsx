@@ -52,13 +52,13 @@ const ParticipantInformationTabs: React.FC<ParticipantInformationTabsProps> = ({
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Contact information</dt>
               <dd className="nhsuk-summary-list__value">
-                {patientDetails.contactInformation}
+                {patientDetails.address}
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Contact details</dt>
               <dd className="nhsuk-summary-list__value">
-                <p>{patientDetails.contactDetails.phone}</p>
+                <p>{patientDetails.contactDetails.phoneNumber}</p>
                 <p>{patientDetails.contactDetails.email}</p>
               </dd>
             </div>

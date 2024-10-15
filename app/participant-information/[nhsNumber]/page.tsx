@@ -14,7 +14,7 @@ export default function Page({ params }: { params: { exceptionId: string } }) {
     nhsNumber: "723 333 6897",
     name: "John Doe",
     dateOfBirth: "1980-01-01",
-    address: "123 Main St, Anytown, AT 12345",
+    address: "123 Any street, Anytown, Anywhere LS14JT",
     contactDetails: {
       phoneNumber: "01234 567890",
       email: "john.doe@example.com",

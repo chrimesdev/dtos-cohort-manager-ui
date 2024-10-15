@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import type { ExceptionDetails } from "../../types";
+import type { ExceptionDetails } from "@/app/types";
 
 const exceptionDetails: ExceptionDetails[] = [
   {

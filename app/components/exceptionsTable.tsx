@@ -17,19 +17,16 @@ const ExceptionsTable: React.FC<ExceptionsTableProps> = ({ exceptions }) => {
         <thead role="rowgroup" className="nhsuk-table__head">
           <tr role="row">
             <th role="columnheader" scope="col">
-              Exception ID
-            </th>
-            <th role="columnheader" scope="col">
               NHS number
             </th>
             <th role="columnheader" scope="col">
-              Date exceptions created
+              Exception ID
+            </th>
+            <th role="columnheader" scope="col">
+              Date created
             </th>
             <th role="columnheader" scope="col">
               Short description
-            </th>
-            <th role="columnheader" scope="col">
-              Type
             </th>
             <th role="columnheader" scope="col">
               Screening service
@@ -46,26 +43,25 @@ const ExceptionsTable: React.FC<ExceptionsTableProps> = ({ exceptions }) => {
               className="nhsuk-table__row"
               key={exception.exceptionId}
             >
-              <td role="cell" className="nhsuk-table__cell">
-                <span
-                  className="nhsuk-table-responsive__heading"
-                  aria-hidden="true"
-                >
-                  Exception ID{" "}
-                </span>
-                <Link
-                  href={`/participant-information/${exception.exceptionId}`}
-                  legacyBehavior
-                >
-                  <a>{exception.exceptionId}</a>
-                </Link>
-              </td>
               <td role="cell" className="nhsuk-table__cell app-u-no-wrap">
                 <span
                   className="nhsuk-table-responsive__heading"
                   aria-hidden="true"
                 >
                   NHS number{" "}
+                </span>
+                <Link
+                  href={`/participant-information/${exception.exceptionId}`}
+                >
+                  {exception.nhsNumber}
+                </Link>
+              </td>
+              <td role="cell" className="nhsuk-table__cell">
+                <span
+                  className="nhsuk-table-responsive__heading"
+                  aria-hidden="true"
+                >
+                  Exception ID{" "}
                 </span>
                 {exception.exceptionId}
               </td>
@@ -74,7 +70,7 @@ const ExceptionsTable: React.FC<ExceptionsTableProps> = ({ exceptions }) => {
                   className="nhsuk-table-responsive__heading"
                   aria-hidden="true"
                 >
-                  Date exceptions created{" "}
+                  Date created{" "}
                 </span>
                 {exception.dateCreated}
               </td>
@@ -86,15 +82,6 @@ const ExceptionsTable: React.FC<ExceptionsTableProps> = ({ exceptions }) => {
                   Short description{" "}
                 </span>
                 {exception.description}
-              </td>
-              <td role="cell" className="nhsuk-table__cell">
-                <span
-                  className="nhsuk-table-responsive__heading"
-                  aria-hidden="true"
-                >
-                  Type{" "}
-                </span>
-                {exception.type}
               </td>
               <td role="cell" className="nhsuk-table__cell">
                 <span

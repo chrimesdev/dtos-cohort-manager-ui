@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import type { PatientDetails } from "../../types";
+import type { PatientDetails } from "@/app/types";
 
 const patientDetails: PatientDetails[] = [
   {
