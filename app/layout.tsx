@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="js-enabled">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
