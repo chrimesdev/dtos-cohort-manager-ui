@@ -1,14 +1,14 @@
-name: Playwright Tests
+name: End-to-end tests
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   pull_request:
-    branches: [main, master]
+    branches: [main]
 
 jobs:
   test:
-    timeout-minutes: 60
+    timeout-minutes: 10
     runs-on: ubuntu-latest
 
     steps:
