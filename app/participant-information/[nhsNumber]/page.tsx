@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 };
 
 export default function Page({ params }: { params: { exceptionId: string } }) {
+  const exceptionId = Number(params.exceptionId);
+
   const patientDetails = {
     nhsNumber: "723 333 6897",
     name: "John Doe",
@@ -24,7 +26,7 @@ export default function Page({ params }: { params: { exceptionId: string } }) {
   };
 
   const exceptionDetails = {
-    exceptionId: 123456,
+    exceptionId: exceptionId,
     nhsNumber: "723 333 6897",
     dateCreated: "10th August 2024",
     description:
@@ -41,8 +43,8 @@ export default function Page({ params }: { params: { exceptionId: string } }) {
         <main className="nhsuk-main-wrapper" id="maincontent" role="main">
           <h1>Participant information</h1>
           <PatientBanner
-            participantName="Sandra Lewis"
-            nhsNumber="723 333 6897"
+            participantName={patientDetails.name}
+            nhsNumber={patientDetails.nhsNumber}
           />
           <ParticipantInformationTabs
             patientDetails={patientDetails}
