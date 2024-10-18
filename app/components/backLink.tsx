@@ -4,7 +4,7 @@ interface BackLinkProps {
   href: string;
 }
 
-const BackLink: React.FC<BackLinkProps> = ({ href }) => {
+export default function BackLink({ href }: BackLinkProps) {
   return (
     <div className="nhsuk-back-link">
       <Link href={href} legacyBehavior>
@@ -24,6 +24,4 @@ const BackLink: React.FC<BackLinkProps> = ({ href }) => {
       </Link>
     </div>
   );
-};
-
-export default BackLink;
+}

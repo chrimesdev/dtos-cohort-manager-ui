@@ -6,10 +6,10 @@ interface PatientBannerProps {
   nhsNumber: string;
 }
 
-const PatientBanner: React.FC<PatientBannerProps> = ({
+export default function PatientBanner({
   participantName,
   nhsNumber,
-}) => {
+}: PatientBannerProps) {
   return (
     <div
       className={`${styles["app-mini-profile-header"]} nhsuk-u-margin-bottom-7`}
@@ -24,6 +24,4 @@ const PatientBanner: React.FC<PatientBannerProps> = ({
       </dl>
     </div>
   );
-};
-
-export default PatientBanner;
+}

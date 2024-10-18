@@ -7,7 +7,7 @@ interface ExceptionsTableProps {
   exceptions: ExceptionDetails[];
 }
 
-const ExceptionsTable: React.FC<ExceptionsTableProps> = ({ exceptions }) => {
+export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
   return (
     <>
       <p>
@@ -109,6 +109,4 @@ const ExceptionsTable: React.FC<ExceptionsTableProps> = ({ exceptions }) => {
       </table>
     </>
   );
-};
-
-export default ExceptionsTable;
+}

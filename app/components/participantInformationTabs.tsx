@@ -6,10 +6,10 @@ interface ParticipantInformationTabsProps {
   exceptionDetails: ExceptionDetails;
 }
 
-const ParticipantInformationTabs: React.FC<ParticipantInformationTabsProps> = ({
+export default function ParticipantInformationTabs({
   patientDetails,
   exceptionDetails,
-}) => {
+}: ParticipantInformationTabsProps) {
   return (
     <>
       <NHSUKJavaScript />
@@ -118,6 +118,4 @@ const ParticipantInformationTabs: React.FC<ParticipantInformationTabsProps> = ({
       </div>
     </>
   );
-};
-
-export default ParticipantInformationTabs;
+}

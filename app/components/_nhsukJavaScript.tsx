@@ -3,12 +3,10 @@
 import { useEffect } from "react";
 import Tabs from "nhsuk-frontend/packages/components/tabs/tabs";
 
-function NHSUKJavaScript() {
+export default function NHSUKJavaScript() {
   useEffect(() => {
     Tabs();
   }, []);
 
   return null;
 }
-
-export default NHSUKJavaScript;

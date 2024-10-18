@@ -6,7 +6,7 @@ interface CardProps {
   url: string;
 }
 
-const Card: React.FC<CardProps> = ({ value, label, url }) => {
+export default function CardProps({ value, label, url }: CardProps) {
   return (
     <div className="nhsuk-card nhsuk-card--clickable">
       <div className="nhsuk-card__content">
@@ -21,6 +21,4 @@ const Card: React.FC<CardProps> = ({ value, label, url }) => {
       </div>
     </div>
   );
-};
-
-export default Card;
+}

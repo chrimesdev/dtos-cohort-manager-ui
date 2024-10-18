@@ -1,6 +1,6 @@
 import Card from "./card";
 
-const CardGroup: React.FC = () => {
+export default function CardGroup() {
   const cards = [
     {
       value: 72,
@@ -23,6 +23,4 @@ const CardGroup: React.FC = () => {
       ))}
     </ul>
   );
-};
-
-export default CardGroup;
+}
