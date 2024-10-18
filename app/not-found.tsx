@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "We cannot find the page you’re looking for - Cohort Manager",
 };
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <Header />

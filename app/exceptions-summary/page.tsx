@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Exceptions summary - Cohort Manager",
 };
 
-export default async function Home() {
+export default async function Page() {
   const exceptions = await getData("/api/exceptions");
 
   return (
