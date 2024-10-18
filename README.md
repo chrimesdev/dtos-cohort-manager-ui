@@ -1,6 +1,6 @@
 # Cohort Manager UI
 
-User interface for the Screening - Cohort Manager service (Service planning team).
+User interface for the Screening - Cohort Manager service (Team Select).
 
 Built with [Next.js](https://nextjs.org/).
 
@@ -42,7 +42,7 @@ Open [http://localhost:3000](http://localhost:3000).
 Create a `.env` file which should override environment variables required to run locally:
 
 ```
-NEXT_PUBLIC_API_URL=http://localhost
+NEXT_PUBLIC_API_URL=http://localhost:3000
 ```
 
 ## Testing
