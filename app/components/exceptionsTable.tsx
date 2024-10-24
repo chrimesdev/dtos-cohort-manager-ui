@@ -11,6 +11,9 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
   return (
     <>
       <table role="table" className="nhsuk-table-responsive">
+        <caption className="nhsuk-table__caption nhsuk-u-visually-hidden">
+          Open breast screening exceptions
+        </caption>
         <thead role="rowgroup" className="nhsuk-table__head">
           <tr role="row">
             <th role="columnheader" scope="col">
@@ -62,7 +65,7 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
                 </span>
                 {exception.nhsNumber}
               </td>
-              <td role="cell" className="nhsuk-table__cell">
+              <td role="cell" className="nhsuk-table__cell app-u-no-wrap">
                 <span
                   className="nhsuk-table-responsive__heading"
                   aria-hidden="true"
