@@ -30,7 +30,6 @@ export default function Page({ params }: { params: { exceptionId: string } }) {
     exceptionId: exceptionId,
     nhsNumber: "723 333 6897",
     dateCreated: "10th August 2024",
-    dateRaisedWithNBO: "14th August 2024",
     shortDescription:
       "Technical error - An illegal character was found, check name, address, telephone number and email address", // Ensure this matches one of the allowed values
     type: "Duplicate",
