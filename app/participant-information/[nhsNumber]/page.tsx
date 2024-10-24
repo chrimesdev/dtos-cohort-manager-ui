@@ -10,7 +10,9 @@ export const metadata: Metadata = {
   title: "Participant information - Cohort Manager",
 };
 
-export default async function Page(props: { params: Promise<{ exceptionId: string }> }) {
+export default async function Page(props: {
+  params: Promise<{ exceptionId: string }>;
+}) {
   const params = await props.params;
   const exceptionId = Number(params.exceptionId);
 
@@ -35,7 +37,6 @@ export default async function Page(props: { params: Promise<{ exceptionId: strin
       "Technical error - An illegal character was found, check name, address, telephone number and email address", // Ensure this matches one of the allowed values
     type: "Duplicate",
     service: "Breast screening",
-    status: "Open",
   };
 
   return (

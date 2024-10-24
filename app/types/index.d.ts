@@ -5,7 +5,6 @@ export type ExceptionDetails = {
   shortDescription: string;
   type: string;
   service: string;
-  status?: "Open" | "Closed";
 };
 
 export type PatientDetails = {

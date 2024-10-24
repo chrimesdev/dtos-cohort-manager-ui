@@ -9,7 +9,6 @@ const exceptionDetails: ExceptionDetails[] = [
     shortDescription: "Possible duplicate",
     type: "Duplicate",
     service: "Breast screening",
-    status: "Open",
   },
   {
     exceptionId: 10001768,
@@ -18,7 +17,6 @@ const exceptionDetails: ExceptionDetails[] = [
     shortDescription: "Technical error - Invalid Gender for this cohort",
     type: "Duplicate",
     service: "Breast screening",
-    status: "Open",
   },
   {
     exceptionId: 10001769,
@@ -28,7 +26,6 @@ const exceptionDetails: ExceptionDetails[] = [
       "Technical error - NHS number was not supplied in a valid format",
     type: "Duplicate",
     service: "Breast screening",
-    status: "Open",
   },
   {
     exceptionId: 10001770,
@@ -37,7 +34,6 @@ const exceptionDetails: ExceptionDetails[] = [
     shortDescription: "Technical error - Invalid postcode",
     type: "Duplicate",
     service: "Breast screening",
-    status: "Open",
   },
   {
     exceptionId: 10001771,
@@ -47,7 +43,6 @@ const exceptionDetails: ExceptionDetails[] = [
       "Technical error - GP practice code (primary card provider) is mandatory for this update and was not supplied",
     type: "Duplicate",
     service: "Breast screening",
-    status: "Open",
   },
   {
     exceptionId: 10001772,
@@ -56,7 +51,6 @@ const exceptionDetails: ExceptionDetails[] = [
     shortDescription: "Technical error - Missing or invalid record type",
     type: "Duplicate",
     service: "Breast screening",
-    status: "Open",
   },
   {
     exceptionId: 10001773,
@@ -65,7 +59,6 @@ const exceptionDetails: ExceptionDetails[] = [
     shortDescription: "Technical error - Date of birth is invalid or missing",
     type: "Duplicate",
     service: "Breast screening",
-    status: "Open",
   },
   {
     exceptionId: 10001774,
@@ -75,7 +68,6 @@ const exceptionDetails: ExceptionDetails[] = [
       "Technical error - Received NHS number is on the PI blocked list",
     type: "Duplicate",
     service: "Breast screening",
-    status: "Open",
   },
 ];
 

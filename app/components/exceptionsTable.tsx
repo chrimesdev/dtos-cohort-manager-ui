@@ -31,9 +31,6 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
             <th role="columnheader" scope="col">
               Screening service
             </th>
-            <th role="columnheader" scope="col">
-              Status
-            </th>
           </tr>
         </thead>
         <tbody className="nhsuk-table__body">
@@ -91,17 +88,6 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
                   Screening service{" "}
                 </span>
                 {exception.service}
-              </td>
-              <td role="cell" className="nhsuk-table__cell">
-                <span
-                  className="nhsuk-table-responsive__heading"
-                  aria-hidden="true"
-                >
-                  Status{" "}
-                </span>
-                <strong className="nhsuk-tag nhsuk-tag--blue">
-                  {exception.status}
-                </strong>
               </td>
             </tr>
           ))}
