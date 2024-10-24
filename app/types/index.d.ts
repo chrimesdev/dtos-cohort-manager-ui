@@ -4,7 +4,6 @@ export type ExceptionDetails = {
   dateCreated: string;
   shortDescription: string;
   type: string;
-  service: string;
 };
 
 export type PatientDetails = {

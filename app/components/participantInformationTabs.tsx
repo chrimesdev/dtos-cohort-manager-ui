@@ -90,12 +90,6 @@ export default function ParticipantInformationTabs({
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
-              <dt className="nhsuk-summary-list__key">Service</dt>
-              <dd className="nhsuk-summary-list__value">
-                {exceptionDetails.service}
-              </dd>
-            </div>
-            <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Short description</dt>
               <dd className="nhsuk-summary-list__value">
                 {exceptionDetails.shortDescription}

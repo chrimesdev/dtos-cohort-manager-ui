@@ -36,7 +36,6 @@ export default async function Page(props: {
     shortDescription:
       "Technical error - An illegal character was found, check name, address, telephone number and email address", // Ensure this matches one of the allowed values
     type: "Duplicate",
-    service: "Breast screening",
   };
 
   return (
