@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   title: "Participant information - Cohort Manager",
 };
 
-export default function Page({ params }: { params: { exceptionId: string } }) {
+export default async function Page(props: { params: Promise<{ exceptionId: string }> }) {
+  const params = await props.params;
   const exceptionId = Number(params.exceptionId);
 
   const patientDetails: PatientDetails = {

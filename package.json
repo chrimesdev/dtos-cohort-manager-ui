@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "test": "pnpm run test:unit",
@@ -15,10 +15,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.2.15",
+    "next": "15.0.1",
     "nhsuk-frontend": "^9.0.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "19.0.0-rc-69d4b800-20241021",
+    "react-dom": "19.0.0-rc-69d4b800-20241021"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.1",
@@ -27,15 +27,21 @@
     "@testing-library/react": "^16.0.1",
     "@types/jest": "^29.5.13",
     "@types/node": "^22.7.6",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.1",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "eslint": "^8.57.1",
-    "eslint-config-next": "14.2.15",
+    "eslint-config-next": "15.0.1",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "sass": "^1.80.2",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "npm:types-react@19.0.0-rc.1",
+      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+    }
   }
 }
