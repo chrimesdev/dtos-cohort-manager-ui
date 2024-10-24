@@ -1,5 +1,5 @@
-import { PatientDetails, ExceptionDetails } from "../types";
-import NHSUKJavaScript from "./_nhsukJavaScript";
+import { PatientDetails, ExceptionDetails } from "@/app//types";
+import NHSUKJavaScript from "@/app/components/_nhsukJavaScript";
 
 interface ParticipantInformationTabsProps {
   patientDetails: PatientDetails;
@@ -58,8 +58,8 @@ export default function ParticipantInformationTabs({
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Contact details</dt>
               <dd className="nhsuk-summary-list__value">
-                <p>{patientDetails.contactDetails.phoneNumber}</p>
-                <p>{patientDetails.contactDetails.email}</p>
+                <p>{patientDetails.contactDetails?.phoneNumber}</p>
+                <p>{patientDetails.contactDetails?.email}</p>
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
@@ -98,7 +98,7 @@ export default function ParticipantInformationTabs({
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Date raised with NBO</dt>
               <dd className="nhsuk-summary-list__value">
-                {exceptionDetails.dateCreated}
+                {exceptionDetails.dateRaisedWithNBO}
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
@@ -110,7 +110,7 @@ export default function ParticipantInformationTabs({
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Short description</dt>
               <dd className="nhsuk-summary-list__value">
-                {exceptionDetails.description}
+                {exceptionDetails.shortDescription}
               </dd>
             </div>
           </dl>

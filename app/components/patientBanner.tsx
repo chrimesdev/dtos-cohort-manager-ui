@@ -1,5 +1,5 @@
-import { formatNhsNumber } from "../lib/utils";
-import styles from "../styles/components/patientBanner.module.scss";
+import { formatNhsNumber } from "@/app/lib/utils";
+import styles from "@/app/styles/components/patientBanner.module.scss";
 
 interface PatientBannerProps {
   participantName: string;

@@ -4,6 +4,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import PatientBanner from "../../components/patientBanner";
 import ParticipantInformationTabs from "../../components/participantInformationTabs";
+import { ExceptionDetails, PatientDetails } from "@/app/types";
 
 export const metadata: Metadata = {
   title: "Participant information - Cohort Manager",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 export default function Page({ params }: { params: { exceptionId: string } }) {
   const exceptionId = Number(params.exceptionId);
 
-  const patientDetails = {
+  const patientDetails: PatientDetails = {
     nhsNumber: "723 333 6897",
     name: "John Doe",
     dateOfBirth: "1980-01-01",
@@ -25,16 +26,18 @@ export default function Page({ params }: { params: { exceptionId: string } }) {
     gpPracticeCode: "G12345",
   };
 
-  const exceptionDetails = {
+  const exceptionDetails: ExceptionDetails = {
     exceptionId: exceptionId,
     nhsNumber: "723 333 6897",
     dateCreated: "10th August 2024",
-    description:
-      "Requesting help with Breast screening service. Not related to failure or outage. NHS number transfer not updating participant recall status.",
+    dateRaisedWithNBO: "14th August 2024",
+    shortDescription:
+      "Technical error - An illegal character was found, check name, address, telephone number and email address", // Ensure this matches one of the allowed values
     type: "Duplicate",
     service: "Breast screening",
-    status: "Active",
+    status: "Open",
   };
+
   return (
     <>
       <Header />

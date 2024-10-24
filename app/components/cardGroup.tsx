@@ -1,4 +1,4 @@
-import Card from "./card";
+import Card from "@/app/components/card";
 
 export default function CardGroup() {
   const cards = [
