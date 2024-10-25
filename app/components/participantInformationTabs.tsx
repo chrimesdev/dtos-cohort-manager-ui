@@ -95,6 +95,12 @@ export default function ParticipantInformationTabs({
                 {exceptionDetails.shortDescription}
               </dd>
             </div>
+            <div className="nhsuk-summary-list__row">
+              <dt className="nhsuk-summary-list__key">Type</dt>
+              <dd className="nhsuk-summary-list__value">
+                {exceptionDetails.type}
+              </dd>
+            </div>
           </dl>
         </div>
       </div>

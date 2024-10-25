@@ -14,7 +14,7 @@ const exceptionDetails: ExceptionDetails[] = [
     nhsNumber: "723 333 6898",
     dateCreated: "11th August 2024",
     shortDescription: "Technical error - Invalid Gender for this cohort",
-    type: "Duplicate",
+    type: "Confusion",
   },
   {
     exceptionId: 10001769,
@@ -37,14 +37,14 @@ const exceptionDetails: ExceptionDetails[] = [
     dateCreated: "14th August 2024",
     shortDescription:
       "Technical error - GP practice code (primary card provider) is mandatory for this update and was not supplied",
-    type: "Duplicate",
+    type: "Confusion",
   },
   {
     exceptionId: 10001772,
     nhsNumber: "723 333 6902",
     dateCreated: "15th August 2024",
     shortDescription: "Technical error - Missing or invalid record type",
-    type: "Duplicate",
+    type: "Confusion",
   },
   {
     exceptionId: 10001773,
@@ -59,7 +59,7 @@ const exceptionDetails: ExceptionDetails[] = [
     dateCreated: "17th August 2024",
     shortDescription:
       "Technical error - Received NHS number is on the PI blocked list",
-    type: "Duplicate",
+    type: "Confusion",
   },
 ];
 
