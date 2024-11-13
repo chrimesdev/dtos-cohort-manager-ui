@@ -1,8 +1,14 @@
 export async function getData(endpoint: string) {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${apiUrl}${endpoint}`);
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const url = `${API_URL}${endpoint}`;
+
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    return await res.json();
+  } catch (error) {
+    throw error;
   }
-  return res.json();
 }
