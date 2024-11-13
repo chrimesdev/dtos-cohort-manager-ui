@@ -1,19 +1,19 @@
 import Card from "@/app/components/card";
 
-export default function CardGroup() {
-  const cards = [
-    {
-      value: 72,
-      label: "Breast screening exceptions",
-      url: "/exceptions-summary",
-    },
-    { value: 23, label: "Duplicate NHS numbers", url: "#" },
-    { value: 22, label: "Confused NHS numbers", url: "#" },
-  ];
+interface CardProps {
+  value: number;
+  label: string;
+  url: string;
+}
 
+interface CardGroupProps {
+  items: CardProps[];
+}
+
+export default function CardGroup({ items }: CardGroupProps) {
   return (
     <ul className="nhsuk-grid-row nhsuk-card-group">
-      {cards.map((card, index) => (
+      {items.map((card, index) => (
         <li
           className="nhsuk-grid-column-one-third nhsuk-card-group__item"
           key={index}
