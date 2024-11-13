@@ -11,7 +11,6 @@ const patientDetails: PatientDetails[] = [
       phoneNumber: "01234 567890",
       email: "john.doe@example.com",
     },
-    gpPractice: "Anytown Medical Centre",
     gpPracticeCode: "G12345",
   },
   {
@@ -23,7 +22,6 @@ const patientDetails: PatientDetails[] = [
       phoneNumber: "09876 543210",
       email: "jane.smith@example.com",
     },
-    gpPractice: "Othertown Health Centre",
     gpPracticeCode: "G67890",
   },
   {
@@ -35,7 +33,6 @@ const patientDetails: PatientDetails[] = [
       phoneNumber: "01122 334455",
       email: "alice.johnson@example.com",
     },
-    gpPractice: "Othertown Health Centre",
     gpPracticeCode: "G67890",
   },
   {
@@ -47,7 +44,6 @@ const patientDetails: PatientDetails[] = [
       phoneNumber: "02233 445566",
       email: "bob.brown@example.com",
     },
-    gpPractice: "Othertown Health Centre",
     gpPracticeCode: "G67890",
   },
   {
@@ -59,7 +55,6 @@ const patientDetails: PatientDetails[] = [
       phoneNumber: "03344 556677",
       email: "charlie.davis@example.com",
     },
-    gpPractice: "Othertown Health Centre",
     gpPracticeCode: "G67890",
   },
   {
@@ -71,7 +66,6 @@ const patientDetails: PatientDetails[] = [
       phoneNumber: "04455 667788",
       email: "diana.evans@example.com",
     },
-    gpPractice: "Othertown Health Centre",
     gpPracticeCode: "G67890",
   },
   {
@@ -83,7 +77,6 @@ const patientDetails: PatientDetails[] = [
       phoneNumber: "01234 567890",
       email: "edward.foster@example.com",
     },
-    gpPractice: "Anytown Medical Centre",
     gpPracticeCode: "G12345",
   },
   {
@@ -95,7 +88,6 @@ const patientDetails: PatientDetails[] = [
       phoneNumber: "06677 889900",
       email: "fiona.green@example.com",
     },
-    gpPractice: "Othertown Health Centre",
     gpPracticeCode: "G67890",
   },
 ];

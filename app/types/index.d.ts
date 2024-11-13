@@ -3,7 +3,6 @@ export type ExceptionDetails = {
   nhsNumber: string;
   dateCreated: string;
   shortDescription: string;
-  type: string;
 };
 
 export type PatientDetails = {
@@ -15,6 +14,5 @@ export type PatientDetails = {
     phoneNumber?: string;
     email?: string;
   };
-  gpPractice?: string;
   gpPracticeCode?: string;
 };

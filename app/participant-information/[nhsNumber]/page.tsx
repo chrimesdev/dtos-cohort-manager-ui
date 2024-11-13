@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import BackLink from "../../components/backLink";
-import Header from "../../components/header";
-import Footer from "../../components/footer";
-import PatientBanner from "../../components/patientBanner";
-import ParticipantInformationTabs from "../../components/participantInformationTabs";
+import ParticipantInformationTabs from "@/app/components/participantInformationTabs";
+import PatientBanner from "@/app/components/patientBanner";
 import { ExceptionDetails, PatientDetails } from "@/app/types";
 
 export const metadata: Metadata = {
@@ -25,7 +22,6 @@ export default async function Page(props: {
       phoneNumber: "01234 567890",
       email: "john.doe@example.com",
     },
-    gpPractice: "Anytown Medical Centre",
     gpPracticeCode: "G12345",
   };
 
@@ -34,28 +30,20 @@ export default async function Page(props: {
     nhsNumber: "723 333 6897",
     dateCreated: "10th August 2024",
     shortDescription:
-      "Technical error - An illegal character was found, check name, address, telephone number and email address", // Ensure this matches one of the allowed values
-    type: "Duplicate",
+      "Technical error - An illegal character was found, check name, address, telephone number and email address",
   };
 
   return (
     <>
-      <Header />
-      <div className="nhsuk-width-container">
-        <BackLink href="/exceptions-summary" />
-        <main className="nhsuk-main-wrapper" id="maincontent" role="main">
-          <h1>Participant information</h1>
-          <PatientBanner
-            participantName={patientDetails.name}
-            nhsNumber={patientDetails.nhsNumber}
-          />
-          <ParticipantInformationTabs
-            patientDetails={patientDetails}
-            exceptionDetails={exceptionDetails}
-          />
-        </main>
-      </div>
-      <Footer />
+      <h1>Participant information</h1>
+      <PatientBanner
+        participantName={patientDetails.name}
+        nhsNumber={patientDetails.nhsNumber}
+      />
+      <ParticipantInformationTabs
+        patientDetails={patientDetails}
+        exceptionDetails={exceptionDetails}
+      />
     </>
   );
 }

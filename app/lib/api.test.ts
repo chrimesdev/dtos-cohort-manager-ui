@@ -1,4 +1,4 @@
-import { getData } from "./api";
+import { getData } from "@/app/lib/api";
 
 describe("getData", () => {
   const originalFetch = global.fetch;

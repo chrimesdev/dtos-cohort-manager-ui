@@ -1,4 +1,4 @@
-import { formatNhsNumber, removeSpacesFromNhsNumber } from "./utils";
+import { formatNhsNumber } from "./utils";
 
 describe("formatNhsNumber", () => {
   it("should format the NHS number as XXX XXX XXXX", () => {

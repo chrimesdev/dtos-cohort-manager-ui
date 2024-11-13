@@ -7,14 +7,12 @@ const exceptionDetails: ExceptionDetails[] = [
     nhsNumber: "723 333 6897",
     dateCreated: "10th August 2024",
     shortDescription: "Possible duplicate",
-    type: "Duplicate",
   },
   {
     exceptionId: 10001768,
     nhsNumber: "723 333 6898",
     dateCreated: "11th August 2024",
     shortDescription: "Technical error - Invalid Gender for this cohort",
-    type: "Confusion",
   },
   {
     exceptionId: 10001769,
@@ -22,14 +20,12 @@ const exceptionDetails: ExceptionDetails[] = [
     dateCreated: "12th August 2024",
     shortDescription:
       "Technical error - NHS number was not supplied in a valid format",
-    type: "Duplicate",
   },
   {
     exceptionId: 10001770,
     nhsNumber: "723 333 6900",
     dateCreated: "13th August 2024",
     shortDescription: "Technical error - Invalid postcode",
-    type: "Duplicate",
   },
   {
     exceptionId: 10001771,
@@ -37,21 +33,18 @@ const exceptionDetails: ExceptionDetails[] = [
     dateCreated: "14th August 2024",
     shortDescription:
       "Technical error - GP practice code (primary card provider) is mandatory for this update and was not supplied",
-    type: "Confusion",
   },
   {
     exceptionId: 10001772,
     nhsNumber: "723 333 6902",
     dateCreated: "15th August 2024",
     shortDescription: "Technical error - Missing or invalid record type",
-    type: "Confusion",
   },
   {
     exceptionId: 10001773,
     nhsNumber: "723 333 6903",
     dateCreated: "16th August 2024",
     shortDescription: "Technical error - Date of birth is invalid or missing",
-    type: "Duplicate",
   },
   {
     exceptionId: 10001774,
@@ -59,7 +52,6 @@ const exceptionDetails: ExceptionDetails[] = [
     dateCreated: "17th August 2024",
     shortDescription:
       "Technical error - Received NHS number is on the PI blocked list",
-    type: "Confusion",
   },
 ];
 

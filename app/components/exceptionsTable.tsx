@@ -28,9 +28,6 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
             <th role="columnheader" scope="col">
               Short description
             </th>
-            <th role="columnheader" scope="col">
-              Type
-            </th>
           </tr>
         </thead>
         <tbody className="nhsuk-table__body">
@@ -79,15 +76,6 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
                   Short description{" "}
                 </span>
                 {exception.shortDescription}
-              </td>
-              <td role="cell" className="nhsuk-table__cell">
-                <span
-                  className="nhsuk-table-responsive__heading"
-                  aria-hidden="true"
-                >
-                  Type{" "}
-                </span>
-                {exception.type}
               </td>
             </tr>
           ))}

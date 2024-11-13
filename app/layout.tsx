@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Header from "@/app/components/header";
+import Footer from "@/app/components/footer";
 import "./globals.scss";
 
 export const metadata: Metadata = {
@@ -13,7 +15,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        <div className="nhsuk-width-container">
+          <main className="nhsuk-main-wrapper" id="maincontent" role="main">
+            {children}
+          </main>
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }

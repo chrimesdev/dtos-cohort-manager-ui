@@ -63,12 +63,6 @@ export default function ParticipantInformationTabs({
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
-              <dt className="nhsuk-summary-list__key">GP practice</dt>
-              <dd className="nhsuk-summary-list__value">
-                {patientDetails.gpPractice}
-              </dd>
-            </div>
-            <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">GP practice code</dt>
               <dd className="nhsuk-summary-list__value">
                 {patientDetails.gpPracticeCode}
@@ -93,12 +87,6 @@ export default function ParticipantInformationTabs({
               <dt className="nhsuk-summary-list__key">Short description</dt>
               <dd className="nhsuk-summary-list__value">
                 {exceptionDetails.shortDescription}
-              </dd>
-            </div>
-            <div className="nhsuk-summary-list__row">
-              <dt className="nhsuk-summary-list__key">Type</dt>
-              <dd className="nhsuk-summary-list__value">
-                {exceptionDetails.type}
               </dd>
             </div>
           </dl>

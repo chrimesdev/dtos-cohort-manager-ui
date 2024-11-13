@@ -6,7 +6,7 @@ interface CardProps {
   url: string;
 }
 
-export default function CardProps({ value, label, url }: CardProps) {
+export default function Card({ value, label, url }: CardProps) {
   return (
     <div className="nhsuk-card nhsuk-card--clickable">
       <div className="nhsuk-card__content">
