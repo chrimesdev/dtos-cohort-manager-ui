@@ -17,11 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        <div className="nhsuk-width-container">
-          <main className="nhsuk-main-wrapper" id="maincontent" role="main">
-            {children}
-          </main>
-        </div>
+        <div className="nhsuk-width-container">{children}</div>
         <Footer />
       </body>
     </html>

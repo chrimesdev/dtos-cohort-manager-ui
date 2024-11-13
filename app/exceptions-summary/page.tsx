@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
 import ExceptionsTable from "@/app/components/exceptionsTable";
 import { getData } from "@/app/lib/api";
+import Breadcrumb from "../components/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Exceptions summary - Cohort Manager",
 };
 
 export default async function Page() {
+  const breadcrumbItems = [{ label: "Overview", url: "/" }];
   const exceptions = await getData("/api/exceptions");
 
   return (
     <>
-      <h1>Exceptions summary</h1>
-      <ExceptionsTable exceptions={exceptions} />
+      <Breadcrumb items={breadcrumbItems} />
+      <main className="nhsuk-main-wrapper" id="maincontent" role="main">
+        <h1>Exceptions summary</h1>
+        <ExceptionsTable exceptions={exceptions} />
+      </main>
     </>
   );
 }

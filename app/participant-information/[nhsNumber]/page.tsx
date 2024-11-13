@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Breadcrumb from "@/app/components/breadcrumb";
 import ParticipantInformationTabs from "@/app/components/participantInformationTabs";
 import PatientBanner from "@/app/components/patientBanner";
 import { ExceptionDetails, PatientDetails } from "@/app/types";
@@ -33,17 +34,31 @@ export default async function Page(props: {
       "Technical error - An illegal character was found, check name, address, telephone number and email address",
   };
 
+  const breadcrumbItems = [
+    {
+      label: "Overview",
+      url: "/",
+    },
+    {
+      label: "Exceptions summary",
+      url: "/exceptions-summary",
+    },
+  ];
+
   return (
     <>
-      <h1>Participant information</h1>
-      <PatientBanner
-        participantName={patientDetails.name}
-        nhsNumber={patientDetails.nhsNumber}
-      />
-      <ParticipantInformationTabs
-        patientDetails={patientDetails}
-        exceptionDetails={exceptionDetails}
-      />
+      <Breadcrumb items={breadcrumbItems} />
+      <main className="nhsuk-main-wrapper" id="maincontent" role="main">
+        <h1>Participant information</h1>
+        <PatientBanner
+          participantName={patientDetails.name}
+          nhsNumber={patientDetails.nhsNumber}
+        />
+        <ParticipantInformationTabs
+          patientDetails={patientDetails}
+          exceptionDetails={exceptionDetails}
+        />
+      </main>
     </>
   );
 }

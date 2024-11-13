@@ -7,9 +7,9 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <main className="nhsuk-main-wrapper" id="maincontent" role="main">
       <h1>Overview</h1>
       <CardGroup />
-    </>
+    </main>
   );
 }
