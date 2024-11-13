@@ -30,14 +30,6 @@ jobs:
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
 
-      - name: Start server
-        run: pnpm run dev &
-        env:
-          CI: true
-
-      - name: Wait for server to start
-        run: npx wait-on http://localhost:3000
-
       - name: Run Playwright tests
         run: pnpm exec playwright test
 
