@@ -5,15 +5,18 @@ export const metadata: Metadata = {
   title: "Overview - Cohort Manager",
 };
 
-export default function Home() {
+export default async function Home() {
+  const data = await fetch(
+    `${process.env.EXCEPTIONS_API_URL}/api/GetValidationExceptions`
+  );
+  const exceptions = await data.json();
+
   const cards = [
     {
-      value: 72,
+      value: exceptions.length,
       label: "Breast screening exceptions",
       url: "/exceptions-summary",
     },
-    { value: 23, label: "Duplicate NHS numbers", url: "#" },
-    { value: 22, label: "Confused NHS numbers", url: "#" },
   ];
 
   return (

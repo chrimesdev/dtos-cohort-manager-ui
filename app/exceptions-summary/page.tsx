@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import ExceptionsTable from "@/app/components/exceptionsTable";
-import { getData } from "@/app/lib/api";
 import Breadcrumb from "../components/breadcrumb";
 
 export const metadata: Metadata = {
@@ -9,7 +8,10 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const breadcrumbItems = [{ label: "Overview", url: "/" }];
-  const exceptions = await getData("/api/exceptions");
+  const data = await fetch(
+    `${process.env.EXCEPTIONS_API_URL}/api/GetValidationExceptions`
+  );
+  const exceptions = await data.json();
 
   return (
     <>

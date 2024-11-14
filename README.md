@@ -42,7 +42,7 @@ Open [http://localhost:3000](http://localhost:3000).
 Create a `.env` file which should override environment variables required to run locally:
 
 ```
-NEXT_PUBLIC_API_URL=http://localhost:3000
+EXCEPTIONS_API_URL=http://localhost:3000
 ```
 
 ## Testing

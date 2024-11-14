@@ -1,5 +1,11 @@
 import { PatientDetails, ExceptionDetails } from "@/app//types";
 import NHSUKJavaScript from "@/app/components/_nhsukJavaScript";
+import {
+  formatDate,
+  formatCompactDate,
+  formatNhsNumber,
+  formatPhoneNumber,
+} from "@/app/lib/utils";
 
 interface ParticipantInformationTabsProps {
   patientDetails: PatientDetails;
@@ -40,13 +46,13 @@ export default function ParticipantInformationTabs({
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Date of birth</dt>
               <dd className="nhsuk-summary-list__value">
-                {patientDetails.dateOfBirth}
+                {formatCompactDate(patientDetails.dateOfBirth ?? "")}
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">NHS number</dt>
               <dd className="nhsuk-summary-list__value">
-                {patientDetails.nhsNumber}
+                {formatNhsNumber(patientDetails.nhsNumber)}
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
@@ -58,7 +64,11 @@ export default function ParticipantInformationTabs({
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Contact details</dt>
               <dd className="nhsuk-summary-list__value">
-                <p>{patientDetails.contactDetails?.phoneNumber}</p>
+                <p>
+                  {formatPhoneNumber(
+                    patientDetails.contactDetails?.phoneNumber ?? ""
+                  )}
+                </p>
                 <p>{patientDetails.contactDetails?.email}</p>
               </dd>
             </div>
@@ -80,7 +90,7 @@ export default function ParticipantInformationTabs({
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Date created</dt>
               <dd className="nhsuk-summary-list__value">
-                {exceptionDetails.dateCreated}
+                {formatDate(exceptionDetails.dateCreated)}
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">

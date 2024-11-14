@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { formatDate, formatNhsNumber } from "@/app/lib/utils";
 import { ExceptionDetails } from "@/app/types";
 
 interface ExceptionsTableProps {
@@ -35,7 +36,7 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
             <tr
               role="row"
               className="nhsuk-table__row"
-              key={exception.exceptionId}
+              key={exception.ExceptionId}
             >
               <td role="cell" className="nhsuk-table__cell">
                 <span
@@ -45,9 +46,9 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
                   Exception ID{" "}
                 </span>
                 <Link
-                  href={`/participant-information/${exception.exceptionId}`}
+                  href={`/participant-information/${exception.ExceptionId}`}
                 >
-                  {exception.exceptionId}
+                  {exception.ExceptionId}
                 </Link>
               </td>
               <td role="cell" className="nhsuk-table__cell app-u-no-wrap">
@@ -57,7 +58,7 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
                 >
                   NHS number{" "}
                 </span>
-                {exception.nhsNumber}
+                {formatNhsNumber(exception.NhsNumber)}
               </td>
               <td role="cell" className="nhsuk-table__cell app-u-no-wrap">
                 <span
@@ -66,7 +67,7 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
                 >
                   Date created{" "}
                 </span>
-                {exception.dateCreated}
+                {formatDate(exception.DateCreated)}
               </td>
               <td role="cell" className="nhsuk-table__cell">
                 <span
@@ -75,7 +76,7 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
                 >
                   Short description{" "}
                 </span>
-                {exception.shortDescription}
+                {exception.RuleDescription}
               </td>
             </tr>
           ))}
