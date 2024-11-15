@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Breadcrumb from "@/app/components/breadcrumb";
 import ParticipantInformationTabs from "@/app/components/participantInformationTabs";
 import PatientBanner from "@/app/components/patientBanner";
-import { ExceptionDetails, PatientDetails } from "@/app/types";
+import { ExceptionDetails } from "@/app/types";
 
 export const metadata: Metadata = {
   title: "Participant information - Cohort Manager",
@@ -33,7 +33,11 @@ export default async function Page(props: {
       throw new Error(`Error fetching data: ${data.statusText}`);
     }
     const exception = await data.json();
-    const patientDetails: PatientDetails = {
+
+    const exceptionDetails: ExceptionDetails = {
+      exceptionId: exceptionId,
+      dateCreated: exception.DateCreated,
+      shortDescription: exception.RuleDescription,
       nhsNumber: exception.NhsNumber,
       name: `${exception.ExceptionDetails.GivenName} ${exception.ExceptionDetails.FamilyName}`,
       dateOfBirth: exception.ExceptionDetails.DateOfBirth,
@@ -45,26 +49,16 @@ export default async function Page(props: {
       gpPracticeCode: exception.ExceptionDetails.GpPracticeCode,
     };
 
-    const exceptionDetails: ExceptionDetails = {
-      exceptionId: exceptionId,
-      nhsNumber: exception.NhsNumber,
-      dateCreated: exception.DateCreated,
-      shortDescription: exception.RuleDescription,
-    };
-
     return (
       <>
         <Breadcrumb items={breadcrumbItems} />
         <main className="nhsuk-main-wrapper" id="maincontent" role="main">
           <h1>Participant information</h1>
           <PatientBanner
-            participantName={patientDetails.name}
-            nhsNumber={patientDetails.nhsNumber}
+            participantName={exceptionDetails.name}
+            nhsNumber={exceptionDetails.nhsNumber || ""}
           />
-          <ParticipantInformationTabs
-            patientDetails={patientDetails}
-            exceptionDetails={exceptionDetails}
-          />
+          <ParticipantInformationTabs exceptionDetails={exceptionDetails} />
         </main>
       </>
     );

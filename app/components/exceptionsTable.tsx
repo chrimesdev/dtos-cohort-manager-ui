@@ -36,7 +36,7 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
             <tr
               role="row"
               className="nhsuk-table__row"
-              key={exception.ExceptionId}
+              key={exception.exceptionId}
             >
               <td role="cell" className="nhsuk-table__cell">
                 <span
@@ -46,9 +46,9 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
                   Exception ID{" "}
                 </span>
                 <Link
-                  href={`/participant-information/${exception.ExceptionId}`}
+                  href={`/participant-information/${exception.exceptionId}`}
                 >
-                  {exception.ExceptionId}
+                  {exception.exceptionId}
                 </Link>
               </td>
               <td role="cell" className="nhsuk-table__cell app-u-no-wrap">
@@ -58,7 +58,7 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
                 >
                   NHS number{" "}
                 </span>
-                {formatNhsNumber(exception.NhsNumber)}
+                {formatNhsNumber(exception.nhsNumber ?? "")}
               </td>
               <td role="cell" className="nhsuk-table__cell app-u-no-wrap">
                 <span
@@ -67,7 +67,7 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
                 >
                   Date created{" "}
                 </span>
-                {formatDate(exception.DateCreated)}
+                {formatDate(exception.dateCreated)}
               </td>
               <td role="cell" className="nhsuk-table__cell">
                 <span
@@ -76,7 +76,7 @@ export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
                 >
                   Short description{" "}
                 </span>
-                {exception.RuleDescription}
+                {exception.shortDescription}
               </td>
             </tr>
           ))}

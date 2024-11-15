@@ -1,4 +1,4 @@
-import { PatientDetails, ExceptionDetails } from "@/app//types";
+import { ExceptionDetails } from "@/app//types";
 import NHSUKJavaScript from "@/app/components/_nhsukJavaScript";
 import {
   formatDate,
@@ -8,12 +8,10 @@ import {
 } from "@/app/lib/utils";
 
 interface ParticipantInformationTabsProps {
-  patientDetails: PatientDetails;
   exceptionDetails: ExceptionDetails;
 }
 
 export default function ParticipantInformationTabs({
-  patientDetails,
   exceptionDetails,
 }: ParticipantInformationTabsProps) {
   return (
@@ -40,25 +38,25 @@ export default function ParticipantInformationTabs({
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Name</dt>
               <dd className="nhsuk-summary-list__value">
-                {patientDetails.name}
+                {exceptionDetails.name}
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Date of birth</dt>
               <dd className="nhsuk-summary-list__value">
-                {formatCompactDate(patientDetails.dateOfBirth ?? "")}
+                {formatCompactDate(exceptionDetails.dateOfBirth ?? "")}
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">NHS number</dt>
               <dd className="nhsuk-summary-list__value">
-                {formatNhsNumber(patientDetails.nhsNumber)}
+                {formatNhsNumber(exceptionDetails.nhsNumber ?? "")}
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Contact information</dt>
               <dd className="nhsuk-summary-list__value">
-                {patientDetails.address}
+                {exceptionDetails.address}
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
@@ -66,16 +64,16 @@ export default function ParticipantInformationTabs({
               <dd className="nhsuk-summary-list__value">
                 <p>
                   {formatPhoneNumber(
-                    patientDetails.contactDetails?.phoneNumber ?? ""
+                    exceptionDetails.contactDetails?.phoneNumber ?? ""
                   )}
                 </p>
-                <p>{patientDetails.contactDetails?.email}</p>
+                <p>{exceptionDetails.contactDetails?.email}</p>
               </dd>
             </div>
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">GP practice code</dt>
               <dd className="nhsuk-summary-list__value">
-                {patientDetails.gpPracticeCode}
+                {exceptionDetails.gpPracticeCode}
               </dd>
             </div>
           </dl>
