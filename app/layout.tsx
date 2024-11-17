@@ -13,10 +13,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const serviceName = process.env.SERVICE_NAME;
   return (
     <html lang="en">
       <body>
-        <Header />
+        <Header serviceName={serviceName} />
         <div className="nhsuk-width-container">{children}</div>
         <Footer />
       </body>

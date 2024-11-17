@@ -42,6 +42,20 @@ Open [http://localhost:3000](http://localhost:3000).
 Create a `.env` file which should override environment variables required to run locally:
 
 ```
+# Default
+NEXT_PUBLIC_BASE_URL=https://localhost:3000
+SERVICE_NAME="Cohort Manager"
+
+# Next Auth
+NEXTAUTH_URL=https://localhost:3000/api/auth
+NEXTAUTH_SECRET={RANDOM_SECRET_STRING}
+
+# CIS2 Auth
+AUTH_CIS2_ISSUER=https://am.nhsint.auth-ptl.cis2.spineservices.nhs.uk
+AUTH_CIS2_CLIENT_ID={CLIENT_ID}
+AUTH_CIS2_CLIENT_SECRET={CLIENT_SECRET}
+
+# API
 EXCEPTIONS_API_URL=http://localhost:3000
 ```
 
