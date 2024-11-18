@@ -8,12 +8,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
   if (session?.user) {
     return {
-      title: "Overview - NHS England",
+      title: `Overview - ${process.env.SERVICE_NAME}`,
     };
   }
 
   return {
-    title: "Log in with your Care Identity account - NHS England",
+    title: `Log in with your Care Identity account - ${process.env.SERVICE_NAME}`,
   };
 }
 
