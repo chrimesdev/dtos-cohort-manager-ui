@@ -43,4 +43,9 @@ next-env.d.ts
 /blob-report/
 /playwright/.cache/
 
+# Env
+.env
+.env.staging
+
+# SSL
 certificates
