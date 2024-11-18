@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Header from "@/app/components/header";
-import Footer from "@/app/components/footer";
 import SignIn from "@/app/components/signIn";
 import { auth } from "@/app/lib/auth";
+import Overview from "@/app/components/overview";
 
 export async function generateMetadata(): Promise<Metadata> {
   const session = await auth();
@@ -25,17 +24,15 @@ export default async function Home() {
   return (
     <main className="nhsuk-main-wrapper" id="maincontent" role="main">
       <div className="nhsuk-grid-row">
-        <div className="nhsuk-grid-column-two-thirds">
-          {session?.user ? (
-            <>
-              <h1>Overview</h1>
-            </>
-          ) : (
-            <>
-              <SignIn serviceName={serviceName} />
-            </>
-          )}
-        </div>
+        {session?.user ? (
+          <div className="nhsuk-grid-column-full">
+            <Overview />
+          </div>
+        ) : (
+          <div className="nhsuk-grid-column-two-thirds">
+            <SignIn serviceName={serviceName} />
+          </div>
+        )}
       </div>
     </main>
   );
