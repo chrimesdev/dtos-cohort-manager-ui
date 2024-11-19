@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
+    "dev:secure": "next dev --experimental-https",
     "build": "next build",
     "start": "next start",
     "test": "pnpm run test:unit",
@@ -15,7 +16,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.0.1",
+    "jwt-decode": "^4.0.0",
+    "next": "14.2.18",
+    "next-auth": "5.0.0-beta.25",
     "nhsuk-frontend": "^9.1.0",
     "react": "18.3.1",
     "react-dom": "18.3.1"

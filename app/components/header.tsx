@@ -1,6 +1,16 @@
 import Link from "next/link";
+import { auth } from "@/app/lib/auth";
+import SignOut from "@/app/components/signOut";
 
-export default function Header() {
+interface HeaderProps {
+  serviceName?: string;
+}
+
+export default async function Header({
+  serviceName = process.env.SERVICE_NAME,
+}: HeaderProps) {
+  const session = await auth();
+
   return (
     <>
       <header className="nhsuk-header" role="banner">
@@ -31,12 +41,33 @@ export default function Header() {
                 </svg>
 
                 <span className="nhsuk-header__service-name">
-                  Cohort Manager
+                  {serviceName}
                 </span>
               </a>
             </Link>
           </div>
         </div>
+        {session?.user && (
+          <div className="nhsuk-navigation-container">
+            <nav
+              className="nhsuk-navigation"
+              id="header-navigation"
+              role="navigation"
+              aria-label="Primary navigation"
+            >
+              <ul className="nhsuk-header__navigation-list">
+                <li className="nhsuk-header__navigation-item">
+                  <Link href="/account" legacyBehavior>
+                    <a className="nhsuk-header__navigation-link">Account</a>
+                  </Link>
+                </li>
+                <li className="nhsuk-header__navigation-item">
+                  <SignOut className="nhsuk-header__navigation-link" />
+                </li>
+              </ul>
+            </nav>
+          </div>
+        )}
       </header>
     </>
   );
