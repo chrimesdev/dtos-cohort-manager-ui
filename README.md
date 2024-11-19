@@ -2,33 +2,41 @@
 
 User interface for the Screening - Cohort Manager service (Team Select).
 
-Built with [Next.js](https://nextjs.org/).
+Built with [Next.js](https://nextjs.org/) using [NHS CIS2 Authentication](https://digital.nhs.uk/services/care-identity-service/applications-and-services/cis2-authentication).
 
-## Using Docker and Makefile
+## Run using Docker and Makefile
 
-Development environment
+Run the development environment in Docker with:
 
-```
+```bash
 make build-development
 make start-development
 ```
 
 Open [http://localhost:3001](http://localhost:3001).
 
-Stop the development environment
+Stop the Docker development environment with:
 
-```
+```bash
 make stop-development
 ```
 
 ## Running locally
 
-Install the required dependencies using `pnpm install`
+Install the required dependencies using
+
+```bash
+pnpm install
+# or
+npm install
+```
 
 Then, run the development server:
 
 ```bash
 pnpm dev
+# or
+npm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -36,6 +44,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ### Prerequisites
 
 - [pnpm](https://pnpm.io/) package manager
+- or [npm](https://nodejs.org/en) package manager
 
 ## Environment variables
 
@@ -56,7 +65,7 @@ AUTH_CIS2_CLIENT_ID={CLIENT_ID}
 AUTH_CIS2_CLIENT_SECRET={CLIENT_SECRET}
 
 # API
-EXCEPTIONS_API_URL=http://localhost:3000
+EXCEPTIONS_API_URL={API_URL}
 ```
 
 ## Testing
