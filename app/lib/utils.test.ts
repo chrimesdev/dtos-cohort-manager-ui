@@ -3,7 +3,7 @@ import {
   formatDate,
   formatCompactDate,
   formatPhoneNumber,
-} from "./utils";
+} from "@/app/lib/utils";
 
 describe("formatNhsNumber", () => {
   it("should format the NHS number as XXX XXX XXXX", () => {
