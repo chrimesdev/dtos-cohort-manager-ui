@@ -2,7 +2,7 @@ import NextAuth, { Profile, Session } from "next-auth";
 import { JWT } from "next-auth/jwt";
 import { jwtDecode } from "jwt-decode";
 import { OAuthConfig } from "next-auth/providers";
-import { DecodedCIS2Token } from "@/app/types";
+import { DecodedCIS2Token } from "@/app/types/auth";
 
 const NHS_CIS2: OAuthConfig<Profile> = {
   id: "nhs-cis2",
