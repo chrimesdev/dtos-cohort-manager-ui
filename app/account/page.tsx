@@ -2,19 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { auth } from "@/app/lib/auth";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const session = await auth();
-
-  if (session?.user) {
-    return {
-      title: `Account - ${process.env.SERVICE_NAME}`,
-    };
-  }
-
-  return {
-    title: `Log in with your Care Identity account - ${process.env.SERVICE_NAME}`,
-  };
-}
+export const metadata: Metadata = {
+  title: "Account - Cohort Manager",
+};
 
 export default async function Page() {
   const session = await auth();
