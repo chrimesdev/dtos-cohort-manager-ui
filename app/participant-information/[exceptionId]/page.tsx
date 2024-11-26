@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/app/components/breadcrumb";
-import ParticipantInformationTabs from "@/app/components/participantInformationTabs";
+import ParticipantInformationTabs from "@/app/components/participantInformationPanel";
 import { ExceptionDetails } from "@/app/types";
 
 export const metadata: Metadata = {
