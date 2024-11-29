@@ -1,5 +1,6 @@
 declare module "next-auth" {
   interface User {
+    uid: string;
     firstName?: string;
     lastName?: string;
     sub?: string;

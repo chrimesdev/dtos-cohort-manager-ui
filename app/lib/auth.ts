@@ -16,7 +16,7 @@ const NHS_CIS2: OAuthConfig<Profile> = {
     params: {
       acr_values: "AAL2_OR_AAL3_ANY",
       scope:
-        "openid profile email nhsperson nationalrbacaccess associatedorgs professionalmemberships organisationalmemberships",
+        "openid profile email nationalrbacaccess organisationalmemberships",
       response_type: "code",
       max_age: 240, // 4 minutes [Required by CIS2]
     },
@@ -62,6 +62,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     async jwt({ token, profile }) {
       if (profile) {
         const {
+          uid,
           given_name: firstName,
           family_name: lastName,
           sub,
@@ -81,6 +82,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         }[];
 
         Object.assign(token, {
+          uid,
           firstName,
           lastName,
           sub: sub ?? undefined,
@@ -94,10 +96,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
     async session({ session, token }: { session: Session; token: JWT }) {
       if (session.user) {
-        const { firstName, lastName, sub, sid, odsCode, orgName, roles } =
+        const { uid, firstName, lastName, sub, sid, odsCode, orgName, roles } =
           token;
 
         Object.assign(session.user, {
+          uid,
           firstName,
           lastName,
           sub,

@@ -16,6 +16,12 @@ export default async function Page() {
           <h1>Account</h1>
           <dl className="nhsuk-summary-list">
             <div className="nhsuk-summary-list__row">
+              <dt className="nhsuk-summary-list__key">UID</dt>
+              <dd className="nhsuk-summary-list__value">
+                {session?.user?.uid}
+              </dd>
+            </div>
+            <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Name</dt>
               <dd className="nhsuk-summary-list__value">
                 {session?.user?.firstName} {session?.user?.lastName}
