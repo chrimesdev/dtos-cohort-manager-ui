@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { auth } from "@/app/lib/auth";
+import { formatCIS2Roles } from "@/app/lib/utils";
 
 export const metadata: Metadata = {
   title: "Account - Cohort Manager",
@@ -36,7 +37,11 @@ export default async function Page() {
             <div className="nhsuk-summary-list__row">
               <dt className="nhsuk-summary-list__key">Roles</dt>
               <dd className="nhsuk-summary-list__value">
-                {session?.user?.roles}
+                <ul>
+                  {formatCIS2Roles(session?.user?.roles).map((role, index) => (
+                    <li key={index}>{role}</li>
+                  ))}
+                </ul>
               </dd>
             </div>
           </dl>

@@ -28,3 +28,8 @@ export const formatCompactDate = (dateString: string): string => {
 export const formatPhoneNumber = (phoneNumber: string): string => {
   return phoneNumber.replace(/(\d{5})(\d{3})(\d{3})/, "$1 $2 $3");
 };
+
+export function formatCIS2Roles(roles?: string): string[] {
+  if (!roles) return [];
+  return roles.replace(/"/g, "").split(":");
+}
