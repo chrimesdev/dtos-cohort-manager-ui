@@ -6,13 +6,13 @@ import {
   formatPhoneNumber,
 } from "@/app/lib/utils";
 
-interface ParticipantInformationTabsProps {
+interface ParticipantInformationPanelProps {
   exceptionDetails: ExceptionDetails;
 }
 
-export default function ParticipantInformationTabs({
+export default function ParticipantInformationPanel({
   exceptionDetails,
-}: ParticipantInformationTabsProps) {
+}: ParticipantInformationPanelProps) {
   return (
     <div className="nhsuk-card">
       <div className="nhsuk-card__content">

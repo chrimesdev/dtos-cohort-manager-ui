@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/app/components/breadcrumb";
-import ParticipantInformationTabs from "@/app/components/participantInformationPanel";
+import ParticipantInformationPanel from "@/app/components/participantInformationPanel";
 import { ExceptionDetails } from "@/app/types";
 
 export const metadata: Metadata = {
@@ -69,7 +69,7 @@ export default async function Page(props: {
         <Breadcrumb items={breadcrumbItems} />
         <main className="nhsuk-main-wrapper" id="maincontent" role="main">
           <h1>Participant information</h1>
-          <ParticipantInformationTabs exceptionDetails={exceptionDetails} />
+          <ParticipantInformationPanel exceptionDetails={exceptionDetails} />
         </main>
       </>
     );
