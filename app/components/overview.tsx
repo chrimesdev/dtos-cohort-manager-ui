@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CardGroup from "@/app/components/cardGroup";
+import fetchExceptions from "@/app/lib/fetchExceptions";
 
 export const metadata: Metadata = {
   title: "Overview - Cohort Manager",
@@ -7,13 +8,7 @@ export const metadata: Metadata = {
 
 export default async function Overview() {
   try {
-    const data = await fetch(
-      `${process.env.EXCEPTIONS_API_URL}/api/GetValidationExceptions`
-    );
-    if (!data.ok) {
-      throw new Error(`Error fetching data: ${data.statusText}`);
-    }
-    const exceptions = await data.json();
+    const exceptions = await fetchExceptions();
 
     const cards = [
       {

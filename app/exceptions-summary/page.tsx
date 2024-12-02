@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { ExceptionDetails } from "@/app/types";
 import ExceptionsTable from "@/app/components/exceptionsTable";
 import Breadcrumb from "../components/breadcrumb";
-import { ExceptionDetails } from "@/app/types";
+import fetchExceptions from "@/app/lib/fetchExceptions";
 
 export const metadata: Metadata = {
   title: "Exceptions summary - Cohort Manager",
@@ -11,13 +12,7 @@ export default async function Page() {
   const breadcrumbItems = [{ label: "Overview", url: "/" }];
 
   try {
-    const data = await fetch(
-      `${process.env.EXCEPTIONS_API_URL}/api/GetValidationExceptions`
-    );
-    if (!data.ok) {
-      throw new Error(`Error fetching data: ${data.statusText}`);
-    }
-    const exceptions = await data.json();
+    const exceptions = await fetchExceptions();
 
     const exceptionDetails: ExceptionDetails[] = exceptions.map(
       (exception: {

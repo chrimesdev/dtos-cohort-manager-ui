@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Breadcrumb from "@/app/components/breadcrumb";
 import ParticipantInformationPanel from "@/app/components/participantInformationPanel";
 import { ExceptionDetails } from "@/app/types";
+import fetchExceptions from "@/app/lib/fetchExceptions";
 
 export const metadata: Metadata = {
   title: "Participant information - Cohort Manager",
@@ -25,13 +26,7 @@ export default async function Page(props: {
   const exceptionId = Number(params.exceptionId);
 
   try {
-    const data = await fetch(
-      `${process.env.EXCEPTIONS_API_URL}/api/GetValidationExceptions?exceptionId=${exceptionId}`
-    );
-    if (!data.ok) {
-      throw new Error(`Error fetching data: ${data.statusText}`);
-    }
-    const exception = await data.json();
+    const exception = await fetchExceptions(exceptionId);
 
     const exceptionDetails: ExceptionDetails = {
       exceptionId: exceptionId,

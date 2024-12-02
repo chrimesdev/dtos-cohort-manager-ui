@@ -3,6 +3,9 @@ export interface ExceptionsAPI {
   NhsNumber: string;
   DateCreated: string;
   RuleDescription: string;
+}
+
+export interface ExceptionAPIDetails extends ExceptionsAPI {
   ExceptionDetails: {
     GivenName: string;
     FamilyName: string;
