@@ -34,9 +34,9 @@ npm install
 Then, run the development server:
 
 ```bash
-pnpm dev
+pnpm dev:secure
 # or
-npm dev
+npm dev:secure
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -59,6 +59,9 @@ SERVICE_NAME="Cohort Manager"
 NEXTAUTH_URL=https://localhost:3000/api/auth
 NEXTAUTH_SECRET={RANDOM_SECRET_STRING}
 
+# Required for hosted environments
+AUTH_TRUST_HOST=true
+
 # CIS2 Auth
 AUTH_CIS2_ISSUER=https://am.nhsint.auth-ptl.cis2.spineservices.nhs.uk
 AUTH_CIS2_CLIENT_ID={CLIENT_ID}
@@ -67,6 +70,8 @@ AUTH_CIS2_CLIENT_SECRET={CLIENT_SECRET}
 # API
 EXCEPTIONS_API_URL={API_URL}
 ```
+
+For `NEXTAUTH_SECRET` you can use `openssl rand -base64 32` or [https://generate-secret.vercel.app/32](https://generate-secret.vercel.app/32) to generate a random value.
 
 ## Testing
 
