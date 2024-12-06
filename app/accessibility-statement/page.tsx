@@ -49,14 +49,20 @@ export default async function Page() {
           <h2>Feedback and contact information</h2>
           <p>
             If you have feedback, or need information on this website in a
-            different format, contact [TODO: Email address]
+            different format, contact{" "}
+            <a href="mailto:england.digitalscreening@nhs.net">
+              england.digitalscreening@nhs.net
+            </a>
           </p>
           <h2>Reporting accessibility problems with this website</h2>
           <p>
             We're always looking to improve the accessibility of this website.
             If you find any problems not listed on this page or think we're not
-            meeting accessibility requirements, please contact [TODO: Email
-            address]. This helps us improve.
+            meeting accessibility requirements, please contact{" "}
+            <a href="mailto:england.digitalscreening@nhs.net">
+              england.digitalscreening@nhs.net
+            </a>
+            . This helps us improve.
           </p>
           <h2>Enforcement procedure</h2>
           <p>

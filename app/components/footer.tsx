@@ -8,20 +8,6 @@ export default function Footer() {
           <div className="nhsuk-width-container">
             <div className="nhsuk-grid-row">
               <div className="nhsuk-grid-column-full">
-                <p className="nhsuk-u-secondary-text-color nhsuk-u-font-size-16">
-                  This website only stores the cookies that are needed to make
-                  it work. Read more about how{" "}
-                  <Link
-                    href="/cookies-policy"
-                    className="nhsuk-footer__list-item-link"
-                  >
-                    we use cookies.
-                  </Link>
-                </p>
-              </div>
-            </div>
-            <div className="nhsuk-grid-row">
-              <div className="nhsuk-grid-column-full">
                 <h2 className="nhsuk-u-visually-hidden">Support links</h2>
                 <div className="nhsuk-footer">
                   <ul className="nhsuk-footer__list">
@@ -31,6 +17,22 @@ export default function Footer() {
                         href="/accessibility-statement"
                       >
                         Accessibility statement
+                      </Link>
+                    </li>
+                    <li className="nhsuk-footer__list-item nhsuk-footer-default__list-item">
+                      <a
+                        className="nhsuk-footer__list-item-link"
+                        href="mailto:england.digitalscreening@nhs.net"
+                      >
+                        Contact us
+                      </a>
+                    </li>
+                    <li className="nhsuk-footer__list-item nhsuk-footer-default__list-item">
+                      <Link
+                        href="/cookies-policy"
+                        className="nhsuk-footer__list-item-link"
+                      >
+                        Cookies
                       </Link>
                     </li>
                     <li className="nhsuk-footer__list-item nhsuk-footer-default__list-item">
