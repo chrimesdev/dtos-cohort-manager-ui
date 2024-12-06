@@ -75,8 +75,14 @@ export default async function Page(props: {
       <>
         <Breadcrumb items={breadcrumbItems} />
         <main className="nhsuk-main-wrapper" id="maincontent" role="main">
-          <h1>Participant information</h1>
-          <ParticipantInformationPanel exceptionDetails={exceptionDetails} />
+          <div className="nhsuk-grid-row">
+            <div className="nhsuk-grid-column-full">
+              <h1>Participant information</h1>
+              <ParticipantInformationPanel
+                exceptionDetails={exceptionDetails}
+              />
+            </div>
+          </div>
         </main>
       </>
     );
@@ -85,11 +91,18 @@ export default async function Page(props: {
       <>
         <Breadcrumb items={breadcrumbItems} />
         <main className="nhsuk-main-wrapper" id="maincontent" role="main">
-          <h1>Participant information</h1>
-          <p>Error loading participant information. Please try again later.</p>
-          <p>
-            Error: {error instanceof Error ? error.message : "Unknown error"}
-          </p>
+          <div className="nhsuk-grid-row">
+            <div className="nhsuk-grid-column-two-thirds">
+              <h1>Participant information</h1>
+              <p>
+                Error loading participant information. Please try again later.
+              </p>
+              <p>
+                Error:{" "}
+                {error instanceof Error ? error.message : "Unknown error"}
+              </p>
+            </div>
+          </div>
         </main>
       </>
     );
