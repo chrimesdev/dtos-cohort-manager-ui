@@ -1,4 +1,4 @@
-export default async function fetchExceptions(exceptionId?: number) {
+export async function fetchExceptions(exceptionId?: number) {
   const apiUrl = exceptionId
     ? `${process.env.EXCEPTIONS_API_URL}/api/GetValidationExceptions?exceptionId=${exceptionId}`
     : `${process.env.EXCEPTIONS_API_URL}/api/GetValidationExceptions`;

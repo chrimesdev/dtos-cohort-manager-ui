@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import SignIn from "@/app/components/signIn";
 import { auth } from "@/app/lib/auth";
+import { checkAccess } from "@/app/lib/checkAccess";
 import Overview from "@/app/components/overview";
+import SignIn from "@/app/components/signIn";
+import Unauthorised from "./components/unauthorised";
 
 export async function generateMetadata(): Promise<Metadata> {
   const session = await auth();
@@ -20,20 +22,18 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
   const serviceName = process.env.SERVICE_NAME;
   const session = await auth();
+  const isSignedIn = !!session?.user;
+  const isCohortManager = session?.user
+    ? await checkAccess(session.user.uid)
+    : false;
 
-  return (
-    <main className="nhsuk-main-wrapper" id="maincontent" role="main">
-      <div className="nhsuk-grid-row">
-        {session?.user ? (
-          <div className="nhsuk-grid-column-full">
-            <Overview />
-          </div>
-        ) : (
-          <div className="nhsuk-grid-column-two-thirds">
-            <SignIn serviceName={serviceName} />
-          </div>
-        )}
-      </div>
-    </main>
-  );
+  if (!isSignedIn) {
+    return <SignIn serviceName={serviceName} />;
+  }
+
+  if (!isCohortManager) {
+    return <Unauthorised />;
+  }
+
+  return <Overview />;
 }

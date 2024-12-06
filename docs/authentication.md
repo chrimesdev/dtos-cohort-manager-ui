@@ -66,4 +66,10 @@ Smartcards require both hardware and software in order to use:
 
 ## Role based access controls (RBAC)
 
-TODO: Complete the RBAC documentation once implemented.
+As well as having Authentication to provide access to the service, we limit access to the service using Role based access controls (RBAC) (`lib/checkAccess.ts`).
+
+You need to add a comma seperated list of `uid` values of the users you want to be able to able access the Cohort Manager service, to `COHORT_MANAGER_USERS` in the `.env` file.
+
+```
+COHORT_MANAGER_USERS=uid1,uid2,uid3,uid4
+```

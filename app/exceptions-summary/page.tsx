@@ -1,14 +1,26 @@
 import type { Metadata } from "next";
 import { ExceptionDetails } from "@/app/types";
+import { auth } from "@/app/lib/auth";
+import { checkAccess } from "@/app/lib/checkAccess";
+import { fetchExceptions } from "@/app/lib/fetchExceptions";
 import ExceptionsTable from "@/app/components/exceptionsTable";
-import Breadcrumb from "../components/breadcrumb";
-import fetchExceptions from "@/app/lib/fetchExceptions";
+import Breadcrumb from "@/app/components/breadcrumb";
+import Unauthorised from "@/app/components/unauthorised";
 
 export const metadata: Metadata = {
   title: "Exceptions summary - Cohort Manager",
 };
 
 export default async function Page() {
+  const session = await auth();
+  const isCohortManager = session?.user
+    ? await checkAccess(session.user.uid)
+    : false;
+
+  if (!isCohortManager) {
+    return <Unauthorised />;
+  }
+
   const breadcrumbItems = [{ label: "Overview", url: "/" }];
 
   try {

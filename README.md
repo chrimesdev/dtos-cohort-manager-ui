@@ -69,6 +69,9 @@ AUTH_CIS2_CLIENT_SECRET={CLIENT_SECRET}
 
 # API
 EXCEPTIONS_API_URL={API_URL}
+
+# Cohort Manager users UIDs
+COHORT_MANAGER_USERS=uid1,uid2,uid3,uid4
 ```
 
 For `NEXTAUTH_SECRET` you can use `openssl rand -base64 32` or [https://generate-secret.vercel.app/32](https://generate-secret.vercel.app/32) to generate a random value.

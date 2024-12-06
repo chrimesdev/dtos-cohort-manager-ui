@@ -1,4 +1,4 @@
-import fetchExceptions from "@/app/lib/fetchExceptions";
+import { fetchExceptions } from "@/app/lib/fetchExceptions";
 import type { ExceptionsAPI } from "@/app/types/exceptionsApi";
 
 describe("fetchExceptions", () => {

@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { ExceptionDetails } from "@/app/types";
+import { auth } from "@/app/lib/auth";
+import { fetchExceptions } from "@/app/lib/fetchExceptions";
+import { checkAccess } from "@/app/lib/checkAccess";
 import Breadcrumb from "@/app/components/breadcrumb";
 import ParticipantInformationPanel from "@/app/components/participantInformationPanel";
-import { ExceptionDetails } from "@/app/types";
-import fetchExceptions from "@/app/lib/fetchExceptions";
+import Unauthorised from "@/app/components/unauthorised";
 
 export const metadata: Metadata = {
   title: "Participant information - Cohort Manager",
@@ -11,6 +14,15 @@ export const metadata: Metadata = {
 export default async function Page(props: {
   params: Promise<{ exceptionId: string }>;
 }) {
+  const session = await auth();
+  const isCohortManager = session?.user
+    ? await checkAccess(session.user.uid)
+    : false;
+
+  if (!isCohortManager) {
+    return <Unauthorised />;
+  }
+
   const breadcrumbItems = [
     {
       label: "Overview",
