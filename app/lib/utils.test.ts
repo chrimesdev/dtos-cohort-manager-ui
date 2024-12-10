@@ -4,6 +4,7 @@ import {
   formatCompactDate,
   formatPhoneNumber,
   formatCIS2Roles,
+  getCurrentDate,
 } from "@/app/lib/utils";
 
 describe("formatNhsNumber", () => {
@@ -67,5 +68,16 @@ describe("formatCIS2Roles", () => {
     const input = undefined;
     const expectedOutput: string[] = [];
     expect(formatCIS2Roles(input)).toEqual(expectedOutput);
+  });
+});
+
+describe("getCurrentDate", () => {
+  it("should return the current date in the format YYYY-MM-DD", () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const expectedOutput = `${year}-${month}-${day}`;
+    expect(getCurrentDate()).toBe(expectedOutput);
   });
 });
