@@ -6,20 +6,18 @@ export default async function Unauthorised() {
     <main className="nhsuk-main-wrapper" id="maincontent" role="main">
       <div className="nhsuk-grid-row">
         <div className="nhsuk-grid-column-two-thirds">
-          <h1>Unauthorised</h1>
+          <h1>You are not authorised to view this page</h1>
           <p>
-            You are logged in as {session?.user?.firstName}{" "}
-            {session?.user?.lastName} ({session?.user?.uid}) but you are not
-            authorised to view this page.
-          </p>
-          <p>
-            Please email{" "}
             <a href="mailto:england.digitalscreening@nhs.net">
-              england.digitalscreening@nhs.net
+              Contact us to request access
             </a>
-            , providing the ID: {session?.user?.uid} if you believe you should
-            have access.
+            , providing:
           </p>
+          <ul>
+            <li>your name</li>
+            <li>your user ID ({session?.user?.uid})</li>
+            <li>details of the page you are trying to access</li>
+          </ul>
         </div>
       </div>
     </main>

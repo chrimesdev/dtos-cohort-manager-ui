@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CardGroup from "@/app/components/cardGroup";
+import DataError from "@/app/components/dataError";
 import { fetchExceptions } from "@/app/lib/fetchExceptions";
 import { getCurrentDate } from "@/app/lib/utils";
 import type { ExceptionsAPI } from "@/app/types/exceptionsApi";
@@ -40,21 +41,7 @@ export default async function Overview() {
         </div>
       </main>
     );
-  } catch (error) {
-    return (
-      <main className="nhsuk-main-wrapper" id="maincontent" role="main">
-        <div className="nhsuk-grid-row">
-          <div className="nhsuk-grid-column-two-thirds">
-            <h1>Overview</h1>
-            <p>
-              There was an error loading the exceptions. Please try again later.
-            </p>
-            <p>
-              Error: {error instanceof Error ? error.message : "Unknown error"}
-            </p>
-          </div>
-        </div>
-      </main>
-    );
+  } catch {
+    return <DataError />;
   }
 }

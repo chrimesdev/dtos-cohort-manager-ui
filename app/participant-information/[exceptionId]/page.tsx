@@ -6,6 +6,7 @@ import { checkAccess } from "@/app/lib/checkAccess";
 import Breadcrumb from "@/app/components/breadcrumb";
 import ParticipantInformationPanel from "@/app/components/participantInformationPanel";
 import Unauthorised from "@/app/components/unauthorised";
+import DataError from "@/app/components/dataError";
 
 export const metadata: Metadata = {
   title: "Participant information - Cohort Manager",
@@ -86,24 +87,11 @@ export default async function Page(props: {
         </main>
       </>
     );
-  } catch (error) {
+  } catch {
     return (
       <>
         <Breadcrumb items={breadcrumbItems} />
-        <main className="nhsuk-main-wrapper" id="maincontent" role="main">
-          <div className="nhsuk-grid-row">
-            <div className="nhsuk-grid-column-two-thirds">
-              <h1>Participant information</h1>
-              <p>
-                Error loading participant information. Please try again later.
-              </p>
-              <p>
-                Error:{" "}
-                {error instanceof Error ? error.message : "Unknown error"}
-              </p>
-            </div>
-          </div>
-        </main>
+        <DataError />;
       </>
     );
   }
