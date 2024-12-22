@@ -1,4 +1,5 @@
-import NextAuth, { Profile, Session } from "next-auth";
+import NextAuth, { Profile, Session, User } from "next-auth";
+import Credentials from "next-auth/providers/credentials";
 import { JWT } from "next-auth/jwt";
 import { jwtDecode } from "jwt-decode";
 import { OAuthConfig } from "next-auth/providers";
@@ -29,7 +30,28 @@ const NHS_CIS2: OAuthConfig<Profile> = {
 };
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  providers: [NHS_CIS2],
+  providers: [
+    NHS_CIS2,
+    ...(process.env.NODE_ENV === "development"
+      ? [
+          Credentials({
+            credentials: {
+              email: {},
+              password: {},
+            },
+            authorize: async () => {
+              const user: User = {
+                uid: "testuid",
+                firstName: "Test",
+                lastName: "User",
+                email: "",
+              };
+              return user;
+            },
+          }),
+        ]
+      : []),
+  ],
   session: {
     strategy: "jwt",
     maxAge: 900, // 15 minutes [Required by CIS2]
@@ -40,6 +62,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return !!auth;
     },
     async signIn({ account }) {
+      // Handle test accounts in development
+      if (
+        process.env.NODE_ENV === "development" &&
+        account?.provider === "credentials"
+      ) {
+        return true;
+      }
+
       if (!account || typeof account.id_token !== "string") {
         return false;
       }
@@ -59,7 +89,24 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
       return isValidToken;
     },
-    async jwt({ token, profile }) {
+    async jwt({ account, token, profile }) {
+      // Handle test accounts in development
+      if (
+        process.env.NODE_ENV === "development" &&
+        account?.provider === "credentials"
+      ) {
+        Object.assign(token, {
+          uid: "testuid",
+          firstName: "Test",
+          lastName: "User",
+          sub: "1234",
+          sid: "5678",
+          orgName: "Test Org",
+          odsCode: "ABC",
+          roles: "Test Role",
+        });
+      }
+
       if (profile) {
         const {
           uid,

@@ -68,6 +68,49 @@ export default function SignIn({
               </div>
             </button>
           </form>
+          {process.env.NODE_ENV === "development" && (
+            <form
+              action={async (formData) => {
+                "use server";
+                await signIn("credentials", formData);
+              }}
+            >
+              <HeadingTag className="nhsuk-heading-l nhsuk-u-margin-top-4">
+                Sign in with a test account
+              </HeadingTag>
+              <div className="nhsuk-form-group">
+                <label className="nhsuk-label" htmlFor="example">
+                  Email
+                </label>
+                <input
+                  className="nhsuk-input"
+                  id="email"
+                  name="email"
+                  type="email"
+                  data-qa="test-account-email"
+                />
+              </div>
+              <div className="nhsuk-form-group">
+                <label className="nhsuk-label" htmlFor="example">
+                  Password
+                </label>
+                <input
+                  className="nhsuk-input"
+                  id="password"
+                  name="password"
+                  type="password"
+                  data-qa="test-account-password"
+                />
+              </div>
+              <button
+                className="nhsuk-button"
+                data-module="nhsuk-button"
+                type="submit"
+              >
+                Sign in with a test account
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </main>
