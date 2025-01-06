@@ -25,7 +25,8 @@ export default async function Page() {
   const breadcrumbItems = [{ label: "Overview", url: "/" }];
 
   try {
-    const exceptions = await fetchExceptions();
+    const response = await fetchExceptions();
+    const exceptions = response.Items;
 
     const exceptionDetails: ExceptionDetails[] = exceptions.map(
       (exception: {

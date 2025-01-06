@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 
 export default async function Overview() {
   try {
-    const exceptions = await fetchExceptions();
+    const response = await fetchExceptions();
+    const exceptions = response.Items;
     const today = getCurrentDate();
     const exceptionsToday = exceptions.filter(
       (exception: ExceptionsAPI) =>

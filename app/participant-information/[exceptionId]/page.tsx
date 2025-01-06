@@ -39,7 +39,8 @@ export default async function Page(props: {
   const exceptionId = Number(params.exceptionId);
 
   try {
-    const exception = await fetchExceptions(exceptionId);
+    const response = await fetchExceptions();
+    const exception = response.Items;
 
     const exceptionDetails: ExceptionDetails = {
       exceptionId: exceptionId,
