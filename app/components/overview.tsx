@@ -11,17 +11,16 @@ export const metadata: Metadata = {
 
 export default async function Overview() {
   try {
-    const response = await fetchExceptions();
-    const exceptions = response.Items;
+    const exceptions = await fetchExceptions();
     const today = getCurrentDate();
-    const exceptionsToday = exceptions.filter(
+    const exceptionsToday = exceptions.Items.filter(
       (exception: ExceptionsAPI) =>
         exception.DateCreated.split("T")[0] === today
     );
 
     const cards = [
       {
-        value: exceptions.length,
+        value: exceptions.TotalItems,
         label: "Breast screening exceptions",
         url: "/exceptions-summary",
       },
