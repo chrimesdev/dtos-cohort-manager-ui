@@ -92,7 +92,7 @@ export default async function Page(props: {
     return (
       <>
         <Breadcrumb items={breadcrumbItems} />
-        <DataError />;
+        <DataError />
       </>
     );
   }
