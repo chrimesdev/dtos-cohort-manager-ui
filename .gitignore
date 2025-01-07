@@ -46,6 +46,7 @@ next-env.d.ts
 # Env
 .env
 .env.staging
+.env.tests
 
 # SSL
 certificates
