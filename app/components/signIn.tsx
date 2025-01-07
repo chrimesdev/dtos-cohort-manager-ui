@@ -87,7 +87,7 @@ export default function SignIn({
                   id="email"
                   name="email"
                   type="email"
-                  data-qa="test-account-email"
+                  data-testid="email"
                 />
               </div>
               <div className="nhsuk-form-group">
@@ -99,13 +99,14 @@ export default function SignIn({
                   id="password"
                   name="password"
                   type="password"
-                  data-qa="test-account-password"
+                  data-testid="password"
                 />
               </div>
               <button
                 className="nhsuk-button"
                 data-module="nhsuk-button"
                 type="submit"
+                data-testid="sign-in"
               >
                 Sign in with a test account
               </button>
