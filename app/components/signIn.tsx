@@ -78,7 +78,7 @@ export default function SignIn({
                 }}
               >
                 <HeadingTag className="nhsuk-heading-l nhsuk-u-margin-top-4">
-                  Sign in with a test account
+                  Log in with a test account
                 </HeadingTag>
                 <div className="nhsuk-form-group">
                   <label className="nhsuk-label" htmlFor="example">
@@ -110,7 +110,7 @@ export default function SignIn({
                   type="submit"
                   data-testid="sign-in"
                 >
-                  Sign in with a test account
+                  Log in with a test account
                 </button>
               </form>
             </>
