@@ -5,11 +5,12 @@ import { getCurrentDate } from "@/app/lib/utils";
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const exceptionId = searchParams.get("exceptionId");
+  const today = getCurrentDate();
 
   if (exceptionId) {
     const exception: ExceptionAPIDetails = {
       NhsNumber: "9437207461",
-      DateCreated: "2025-01-07T15:15:03.657",
+      DateCreated: `${today}T15:15:03.657`,
       RuleDescription: "Invalid primary care provider GP practice code.",
       ExceptionDetails: {
         GivenName: "Ava",
@@ -29,8 +30,6 @@ export async function GET(request: Request) {
     };
     return NextResponse.json(exception, { status: 200 });
   }
-
-  const today = getCurrentDate();
 
   return NextResponse.json(
     {
