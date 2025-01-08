@@ -39,8 +39,7 @@ export default async function Page(props: {
   const exceptionId = Number(params.exceptionId);
 
   try {
-    const response = await fetchExceptions();
-    const exception = response.Items;
+    const exception = await fetchExceptions(exceptionId);
 
     const exceptionDetails: ExceptionDetails = {
       exceptionId: exceptionId,
@@ -88,7 +87,8 @@ export default async function Page(props: {
         </main>
       </>
     );
-  } catch {
+  } catch (error) {
+    console.error("Error fetching exception details:", error);
     return (
       <>
         <Breadcrumb items={breadcrumbItems} />
