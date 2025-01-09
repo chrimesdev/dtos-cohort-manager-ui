@@ -19,6 +19,12 @@ export default function ParticipantInformationPanel({
         <h2 className="nhsuk-heading-m">Personal details</h2>
         <dl className="nhsuk-summary-list">
           <div className="nhsuk-summary-list__row">
+            <dt className="nhsuk-summary-list__key">NHS number</dt>
+            <dd className="nhsuk-summary-list__value">
+              {formatNhsNumber(exceptionDetails.nhsNumber ?? "")}
+            </dd>
+          </div>
+          <div className="nhsuk-summary-list__row">
             <dt className="nhsuk-summary-list__key">Name</dt>
             <dd className="nhsuk-summary-list__value">
               {exceptionDetails.name}
@@ -34,12 +40,6 @@ export default function ParticipantInformationPanel({
             <dt className="nhsuk-summary-list__key">Gender</dt>
             <dd className="nhsuk-summary-list__value">
               {exceptionDetails.gender}
-            </dd>
-          </div>
-          <div className="nhsuk-summary-list__row">
-            <dt className="nhsuk-summary-list__key">NHS number</dt>
-            <dd className="nhsuk-summary-list__value">
-              {formatNhsNumber(exceptionDetails.nhsNumber ?? "")}
             </dd>
           </div>
           <div className="nhsuk-summary-list__row">

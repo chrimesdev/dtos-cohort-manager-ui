@@ -43,9 +43,9 @@ export default async function Page(props: {
 
     const exceptionDetails: ExceptionDetails = {
       exceptionId: exceptionId,
+      nhsNumber: exception.NhsNumber,
       dateCreated: exception.DateCreated,
       shortDescription: exception.RuleDescription,
-      nhsNumber: exception.NhsNumber,
       name: `${exception.ExceptionDetails.GivenName} ${exception.ExceptionDetails.FamilyName}`,
       dateOfBirth: exception.ExceptionDetails.DateOfBirth,
       gender: exception.ExceptionDetails.Gender,
