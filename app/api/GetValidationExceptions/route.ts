@@ -16,6 +16,7 @@ export async function GET(request: Request) {
         GivenName: "Ava",
         FamilyName: "Cluley",
         DateOfBirth: "19930226",
+        Gender: "Female",
         ParticipantAddressLine1: "11 Stanhope Road",
         ParticipantAddressLine2: "London",
         ParticipantPostCode: "E17 9QT",

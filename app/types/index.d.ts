@@ -5,6 +5,7 @@ export interface ExceptionDetails {
   nhsNumber?: string;
   name: string;
   dateOfBirth?: string;
+  gender?: string;
   address?: string;
   contactDetails?: {
     phoneNumber?: string;

@@ -48,6 +48,7 @@ export default async function Page(props: {
       nhsNumber: exception.NhsNumber,
       name: `${exception.ExceptionDetails.GivenName} ${exception.ExceptionDetails.FamilyName}`,
       dateOfBirth: exception.ExceptionDetails.DateOfBirth,
+      gender: exception.ExceptionDetails.Gender,
       address: `${exception.ExceptionDetails.ParticipantAddressLine1}${
         exception.ExceptionDetails.ParticipantAddressLine2
           ? `, ${exception.ExceptionDetails.ParticipantAddressLine2}`

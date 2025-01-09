@@ -31,6 +31,12 @@ export default function ParticipantInformationPanel({
             </dd>
           </div>
           <div className="nhsuk-summary-list__row">
+            <dt className="nhsuk-summary-list__key">Gender</dt>
+            <dd className="nhsuk-summary-list__value">
+              {exceptionDetails.gender}
+            </dd>
+          </div>
+          <div className="nhsuk-summary-list__row">
             <dt className="nhsuk-summary-list__key">NHS number</dt>
             <dd className="nhsuk-summary-list__value">
               {formatNhsNumber(exceptionDetails.nhsNumber ?? "")}

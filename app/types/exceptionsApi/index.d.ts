@@ -10,6 +10,7 @@ export interface ExceptionAPIDetails extends ExceptionsAPI {
     GivenName: string;
     FamilyName: string;
     DateOfBirth: string;
+    Gender: string;
     ParticipantAddressLine1: string;
     ParticipantAddressLine2: string;
     ParticipantAddressLine3: string;
