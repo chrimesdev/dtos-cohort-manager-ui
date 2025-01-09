@@ -70,6 +70,23 @@ export default async function Page(props: {
         email: exception.ExceptionDetails.EmailAddressHome,
       },
       gpPracticeCode: exception.ExceptionDetails.GpPracticeCode,
+      gpPracticeAddress: `${exception.ExceptionDetails.GpAddressLine1}${
+        exception.ExceptionDetails.GpAddressLine2
+          ? `, ${exception.ExceptionDetails.GpAddressLine2}`
+          : ""
+      }${
+        exception.ExceptionDetails.GpAddressLine3
+          ? `, ${exception.ExceptionDetails.GpAddressLine3}`
+          : ""
+      }${
+        exception.ExceptionDetails.GpAddressLine4
+          ? `, ${exception.ExceptionDetails.GpAddressLine4}`
+          : ""
+      }${
+        exception.ExceptionDetails.gpAddressLine5
+          ? `, ${exception.ExceptionDetails.gpAddressLine5}`
+          : ""
+      }, ${exception.ExceptionDetails.ParticipantPostCode}`,
     };
 
     return (

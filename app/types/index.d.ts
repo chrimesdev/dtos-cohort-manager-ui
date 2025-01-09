@@ -11,4 +11,5 @@ export interface ExceptionDetails {
     email?: string;
   };
   gpPracticeCode?: string;
+  gpPracticeAddress?: string;
 }

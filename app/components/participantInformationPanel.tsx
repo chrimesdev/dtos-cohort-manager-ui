@@ -59,6 +59,12 @@ export default function ParticipantInformationPanel({
               {exceptionDetails.gpPracticeCode}
             </dd>
           </div>
+          <div className="nhsuk-summary-list__row">
+            <dt className="nhsuk-summary-list__key">GP practice address</dt>
+            <dd className="nhsuk-summary-list__value">
+              {exceptionDetails.gpPracticeAddress}
+            </dd>
+          </div>
         </dl>
 
         <h2 className="nhsuk-heading-m">Exception details</h2>

@@ -25,6 +25,12 @@ export async function GET(request: Request) {
         ParticipantAddressLine3: "",
         ParticipantAddressLine4: "",
         ParticipantAddressLine5: "",
+        GpAddressLine1: "Anytown Medical Centre",
+        GpAddressLine2: "1 Anystreet Road",
+        GpAddressLine3: "Anytown",
+        GpAddressLine4: "",
+        GpAddressLine5: "",
+        GpPostCode: "GP1 1GP",
       },
       ExceptionId: 0,
     };

@@ -19,5 +19,11 @@ export interface ExceptionAPIDetails extends ExceptionsAPI {
     TelephoneNumberHome: string;
     EmailAddressHome: string;
     GpPracticeCode: string;
+    GpAddressLine1: string;
+    GpAddressLine2: string;
+    GpAddressLine3: string;
+    GpAddressLine4: string;
+    GpAddressLine5: string;
+    GpPostCode: string;
   };
 }
