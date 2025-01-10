@@ -13,6 +13,7 @@ export default async function Overview() {
   try {
     const response = await fetchExceptions();
     const exceptions = response.Items;
+
     const today = getCurrentDate();
     const exceptionsToday = exceptions.filter(
       (exception: ExceptionsAPI) =>
@@ -21,14 +22,14 @@ export default async function Overview() {
 
     const cards = [
       {
-        value: exceptions.length,
+        value: response.TotalItems,
         label: "Breast screening exceptions",
         url: "/exceptions-summary",
       },
       {
         value: exceptionsToday.length,
         label: "Breast screening exceptions created today",
-        url: `/exceptions-summary?date=${today}`,
+        url: `/exceptions-summary?filter=today`,
       },
     ];
 
