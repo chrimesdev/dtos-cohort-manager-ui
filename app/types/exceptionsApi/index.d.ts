@@ -1,8 +1,17 @@
 export interface ExceptionsAPI {
   ExceptionId: number;
+  FileName: string;
   NhsNumber: string;
   DateCreated: string;
+  DateResolved: string;
+  RuleId: number;
   RuleDescription: string;
+  ErrorRecord: string;
+  Category: number;
+  ScreeningName: string;
+  ExceptionDate: string;
+  CohortName: string;
+  Fatal: number;
 }
 
 export interface ExceptionAPIDetails extends ExceptionsAPI {
