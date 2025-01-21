@@ -447,6 +447,12 @@ export async function GET(request: Request) {
         ExceptionDetails: null,
       },
     ],
+    IsFirstPage: true,
+    HasNextPage: false,
+    LastResultId: 4394,
+    TotalItems: 21,
+    TotalPages: 1,
+    CurrentPage: 1,
   };
 
   return NextResponse.json(exceptions, { status: 200 });

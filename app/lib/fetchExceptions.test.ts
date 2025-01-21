@@ -14,6 +14,15 @@ describe("fetchExceptions", () => {
         DateCreated: "2024-11-28T11:58:48.017",
         RuleDescription:
           "There was problem posting the participant to the database",
+        FileName: "",
+        DateResolved: "",
+        RuleId: 0,
+        ErrorRecord: "",
+        Category: 0,
+        ScreeningName: "",
+        ExceptionDate: "",
+        CohortName: "",
+        Fatal: 0,
       },
       {
         ExceptionId: 3671,
@@ -21,6 +30,15 @@ describe("fetchExceptions", () => {
         DateCreated: "2024-11-28T11:58:48.393",
         RuleDescription:
           "There was an error while marking participant as eligible {eligibleResponse}",
+        FileName: "",
+        DateResolved: "",
+        RuleId: 0,
+        ErrorRecord: "",
+        Category: 0,
+        ScreeningName: "",
+        ExceptionDate: "",
+        CohortName: "",
+        Fatal: 0,
       },
       {
         ExceptionId: 3676,
@@ -28,6 +46,15 @@ describe("fetchExceptions", () => {
         DateCreated: "2024-11-28T11:58:49.987",
         RuleDescription:
           "Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.",
+        FileName: "",
+        DateResolved: "",
+        RuleId: 0,
+        ErrorRecord: "",
+        Category: 0,
+        ScreeningName: "",
+        ExceptionDate: "",
+        CohortName: "",
+        Fatal: 0,
       },
     ];
     global.fetch = jest.fn().mockResolvedValue({
