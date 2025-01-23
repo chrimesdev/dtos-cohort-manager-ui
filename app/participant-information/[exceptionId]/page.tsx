@@ -9,7 +9,7 @@ import Unauthorised from "@/app/components/unauthorised";
 import DataError from "@/app/components/dataError";
 
 export const metadata: Metadata = {
-  title: "Participant information - Cohort Manager",
+  title: "Exception information - Cohort Manager",
 };
 
 export default async function Page(props: {
@@ -96,7 +96,12 @@ export default async function Page(props: {
         <main className="nhsuk-main-wrapper" id="maincontent" role="main">
           <div className="nhsuk-grid-row">
             <div className="nhsuk-grid-column-full">
-              <h1>Participant information</h1>
+              <h1>
+                Exception information
+                <span className="nhsuk-caption-xl">
+                  Exception ID: {exceptionDetails.exceptionId}
+                </span>
+              </h1>
               <ParticipantInformationPanel
                 exceptionDetails={exceptionDetails}
               />

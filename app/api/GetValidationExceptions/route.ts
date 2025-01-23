@@ -5,6 +5,7 @@ import { getCurrentDate } from "@/app/lib/utils";
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const exceptionId = searchParams.get("exceptionId");
+  const todayOnly = searchParams.get("todayOnly");
   const today = getCurrentDate();
 
   if (exceptionId) {
@@ -46,6 +47,70 @@ export async function GET(request: Request) {
       },
     };
     return NextResponse.json(exception, { status: 200 });
+  }
+
+  if (todayOnly) {
+    const exceptions = {
+      Items: [
+        {
+          ExceptionId: 2063,
+          FileName: "ADD_500_2_-_CAAS_BREAST_SCREENING_COHORT.parquet",
+          NhsNumber: "9437207461",
+          DateCreated: `${today}T15:15:03.657`,
+          DateResolved: "2025-01-07T00:00:00",
+          RuleId: -2147467261,
+          RuleDescription: "Invalid primary care provider GP practice code.",
+          ErrorRecord:
+            '{"RecordType":"ADD","ChangeTimeStamp":null,"SerialChangeNumber":null,"NhsNumber":"9437207461","SupersededByNhsNumber":null,"PrimaryCareProvider":"Y00211","PrimaryCareProviderEffectiveFromDate":"19930501","CurrentPosting":"SUN","CurrentPostingEffectiveFromDate":"19811221","NamePrefix":"MRS","FirstName":"AVA","OtherGivenNames":"ESTELLA","FamilyName":"CLULEY","PreviousFamilyName":null,"DateOfBirth":"19680328","Gender":2,"AddressLine1":"11 STANHOPE ROAD","AddressLine2":"LONDON","AddressLine3":null,"AddressLine4":null,"AddressLine5":null,"Postcode":"E17 9QT","PafKey":"3169441","UsualAddressEffectiveFromDate":"20090219","ReasonForRemoval":"","ReasonForRemovalEffectiveFromDate":"","DateOfDeath":null,"DeathStatus":null,"TelephoneNumber":null,"TelephoneNumberEffectiveFromDate":null,"MobileNumber":null,"MobileNumberEffectiveFromDate":null,"EmailAddress":null,"EmailAddressEffectiveFromDate":null,"PreferredLanguage":null,"IsInterpreterRequired":"0","InvalidFlag":"0","ParticipantId":null,"ScreeningId":"1","BusinessRuleVersion":null,"ExceptionFlag":"Y","RecordInsertDateTime":"01/07/2025 15:12:43","RecordUpdateDateTime":null,"ScreeningAcronym":null,"ScreeningName":"Breast Screening","EligibilityFlag":"1"}',
+          Category: 5,
+          ScreeningName: "Breast Screening",
+          ExceptionDate: "2025-01-07T00:00:00",
+          CohortName: "",
+          Fatal: 1,
+          ExceptionDetails: {
+            GivenName: "Ava",
+            FamilyName: "Cluley",
+            DateOfBirth: "19930226",
+            Gender: "Female",
+            ParticipantAddressLine1: "11 Stanhope Road",
+            ParticipantAddressLine2: "London",
+            ParticipantPostCode: "E17 9QT",
+            TelephoneNumberHome: "011 1111 1111",
+            EmailAddressHome: "ava.cluley@example.com",
+            GpPracticeCode: "Y00211",
+            ParticipantAddressLine3: "",
+            ParticipantAddressLine4: "",
+            ParticipantAddressLine5: "",
+            GpAddressLine1: "Anytown Medical Centre",
+            GpAddressLine2: "1 Anystreet Road",
+            GpAddressLine3: "Anytown",
+            GpAddressLine4: "",
+            GpAddressLine5: "",
+            GpPostCode: "GP1 1GP",
+            ExceptionId: 0,
+            FileName: "",
+            NhsNumber: "",
+            DateCreated: "",
+            DateResolved: "",
+            RuleId: 0,
+            RuleDescription: "",
+            ErrorRecord: "",
+            Category: 0,
+            ScreeningName: "",
+            ExceptionDate: "",
+            CohortName: "",
+            Fatal: 0,
+          },
+        },
+      ],
+      IsFirstPage: true,
+      HasNextPage: false,
+      LastResultId: 2063,
+      TotalItems: 1,
+      TotalPages: 1,
+      CurrentPage: 1,
+    };
+    return NextResponse.json(exceptions, { status: 200 });
   }
 
   const exceptions = {

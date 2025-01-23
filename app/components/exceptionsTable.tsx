@@ -6,14 +6,18 @@ import { ExceptionDetails } from "@/app/types";
 
 interface ExceptionsTableProps {
   exceptions: ExceptionDetails[];
+  caption?: string;
 }
 
-export default function ExceptionsTable({ exceptions }: ExceptionsTableProps) {
+export default function ExceptionsTable({
+  exceptions,
+  caption,
+}: ExceptionsTableProps) {
   return (
     <>
       <table role="table" className="nhsuk-table-responsive">
-        <caption className="nhsuk-table__caption nhsuk-u-visually-hidden">
-          Open breast screening exceptions
+        <caption className="nhsuk-table__caption">
+          {caption ? `${caption}` : "Total breast screening exceptions"}
         </caption>
         <thead role="rowgroup" className="nhsuk-table__head">
           <tr role="row">

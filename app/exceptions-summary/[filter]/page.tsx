@@ -2,17 +2,22 @@ import type { Metadata } from "next";
 import { ExceptionDetails } from "@/app/types";
 import { auth } from "@/app/lib/auth";
 import { checkAccess } from "@/app/lib/checkAccess";
-import { fetchExceptions } from "@/app/lib/fetchExceptions";
+import {
+  fetchExceptions,
+  fetchExceptionsToday,
+} from "@/app/lib/fetchExceptions";
 import ExceptionsTable from "@/app/components/exceptionsTable";
 import Breadcrumb from "@/app/components/breadcrumb";
 import Unauthorised from "@/app/components/unauthorised";
 import DataError from "@/app/components/dataError";
 
 export const metadata: Metadata = {
-  title: "Complete exceptions list - Cohort Manager",
+  title: "Exceptions created today - Cohort Manager",
 };
 
-export default async function Page() {
+export default async function Page(props: {
+  params: Promise<{ filter: string }>;
+}) {
   const session = await auth();
   const isCohortManager = session?.user
     ? await checkAccess(session.user.uid)
@@ -25,7 +30,11 @@ export default async function Page() {
   const breadcrumbItems = [{ label: "Overview", url: "/" }];
 
   try {
-    const exceptions = await fetchExceptions();
+    const params = await props.params;
+    const exceptions =
+      params.filter === "today"
+        ? await fetchExceptionsToday()
+        : await fetchExceptions();
 
     const exceptionDetails: ExceptionDetails[] = exceptions.Items.map(
       (exception: {
@@ -50,12 +59,15 @@ export default async function Page() {
               <h1>
                 Breast screening exceptions
                 <span className="nhsuk-caption-xl">
-                  Complete exceptions list
+                  Exceptions created today
                 </span>
               </h1>
               <div className="nhsuk-card">
                 <div className="nhsuk-card__content">
-                  <ExceptionsTable exceptions={exceptionDetails} />
+                  <ExceptionsTable
+                    exceptions={exceptionDetails}
+                    caption="Breast screening exceptions which have been created today"
+                  />
                 </div>
               </div>
             </div>
