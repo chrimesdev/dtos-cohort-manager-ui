@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "dev:secure": "next dev --experimental-https",
+    "dev": "next dev --turbo",
+    "dev:secure": "next dev --turbo --experimental-https",
     "build": "next build",
     "start": "next start",
     "test": "pnpm run test:unit",
